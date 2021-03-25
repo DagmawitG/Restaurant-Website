@@ -11,11 +11,12 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
+          {% for hero in heros %}
           <div class="carousel-item active" id="sliderImage" >
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"><span>El Delicios d'Etiopia</span> Restaurant</h2>
-                <p class="animate__animated animate__fadeInUp">Fresh and Delicious Ethiopian Food just for you</p>
+                <h2 class="animate__animated animate__fadeInDown"><span>{{hero.restaurantName}}</span> Restaurant</h2>
+                <p class="animate__animated animate__fadeInUp">{{hero.restaurantMotto}}</p>
                 <div>
                   <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
                   <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
@@ -23,6 +24,7 @@
               </div>
             </div>
           </div>
+          {% endfor %}
 
         
 
@@ -43,31 +45,29 @@
           <div class="col-lg-5 " id='aboutPic'>
             
           </div>
-
+          {% for about in aboutUs%}
           <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
 
             <div class="content">
-              <h3> <strong>About Us</strong></h3>
+              <h3> <strong>{{about.aboutTitle}}</strong></h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                {{about.aboutPar1}}
+               
               </p>
               <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+                {{about.aboutPar2}}
+               
               </p>
-              <ul>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
+              
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum
+                {{about.aboutPar3}}
+               
               </p>
             </div>
 
           </div>
+
+          {% endfor %}
 
         </div>
 
@@ -77,10 +77,11 @@
 
 {% block why-us %}
     <section id="why-us" class="why-us">
+      {% for us in whyUs %}
       <div class="container">
 
         <div class="section-title">
-          <h2>Why choose <span>Our Restaurant</span></h2>
+          <h2>{{us.whyUsTitle}}</h2>
           
         </div>
 
@@ -89,16 +90,16 @@
           <div class="col-lg-4">
             <div class="box">
               <span>01</span>
-              <h4>Delicious Ethiopian Cuisine</h4>
-              <p>Tasty Ethiopian Traditional Foods with affordable prices</p>
+              <h4>{{us.whyUs1}}</h4>
+              <p>{{us.whyUsDesc1}}</p>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
               <span>02</span>
-              <h4>Friendly Environment</h4>
-              <p>Clean, cozy and great customer service</p>
+              <h4>{{us.whyUs2}}</h4>
+              <p>{{us.whyUsDesc2}}</p>
               <p></p>
             </div>
           </div>
@@ -106,8 +107,8 @@
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box">
               <span>03</span>
-              <h4> Delightful Experience of the Ethiopian Culture </h4>
-              <p> Witness Ethiopian culture,the local food and decorations. </p>
+              <h4>{{us.whyUs3}}</h4>
+              <p>{{us.whyUsDesc3}}</p>
               <p></p>
             </div>
           </div>
@@ -115,6 +116,7 @@
         </div>
 
       </div>
+      {% endfor %}
     </section>
 {% endblock why-us %}
 

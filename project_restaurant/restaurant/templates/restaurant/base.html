@@ -44,11 +44,12 @@
 
     <header id="header" class="fixed-top d-flex align-items-center header-transparent">
         <div class="container d-flex align-items-center">
-
+        {% for hero in heros%}
         <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{% url 'restaurant-home'%}"><span>El Delicios d'Etiopia</span></a></h1>
+            <h1 class="text-light"><a href="{% url 'restaurant-home'%}"><span>{{hero.restaurantName}}</span></a></h1>
         
         </div>
+        {% endfor %}
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
