@@ -616,34 +616,38 @@
             <div class="col-lg-3 col-md-6 info">
               <i class="icofont-google-map"></i>
               <h4>Location:</h4>
-              <p>Carrer de Ca l'Alegre de Dalt, 6
-                08024<br> Barcelona,
-                Spain</p>
+              {% for locationData in location %}
+                <p>{{locationData.avenue}}<br> {{locationData.city}},
+                {{locationData.country}}</p>
+                <br>
+              {% endfor %}
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-clock-time icofont-rotate-90"></i>
               <h4>Open Hours:</h4>
-              <p>Mon:	13: 30–16: 30, 19: 00–22: 00 <br>
-                Tue:	13: 00–16: 30, 19: 00–22: 00<br>
-                Wed:	Closed<br>
-                Thu:	13: 30–16: 30, 19: 00–22: 00<br>
-                Fri:	13: 30–16: 30, 19: 00–22: 00<br>
-                sat:	13: 30–16: 30, 19: 00–22: 00<br>
-                Sun:	13: 30–16: 30, 19: 00–22: 00</p>
+              <p>Weekdays:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
+                 Weekends:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}</p>
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-envelope"></i>
               <h4>Email:</h4>
-              <p>info@example.com<br>contact@example.com</p>
+              {% for emailData in email %}
+                <p>{{emailData.email_address}}</p>
+                <br>
+              {% endfor %}
+              
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-phone"></i>
               <h4>Call:</h4>
-              <p>632 80 21 45 <br>
-                930 24 26 43</p>
+              {% for callData in call %}
+                <p>{{callData.phone_number}}</p>
+                <br>
+              {% endfor %}
+              
             </div>
           </div>
         </div>
