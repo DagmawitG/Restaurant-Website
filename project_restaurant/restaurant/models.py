@@ -37,5 +37,28 @@ class Footer(models.Model):
     def __str__(self):
         return self.footerTitle
 
+class Location(models.Model):
+    avenue = models.CharField(max_length=200)
+    city = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    def __str__(self):
+        return self.avenue +" " + self.city +", "+ self.country
 
+class OpenHours(models.Model):
+    weekdays_startTime  = models.CharField(max_length=100)
+    weekdays_endTime = models.CharField(max_length=100)
+    weekends_startTime  = models.CharField(max_length=100)
+    weekends_endTime = models.CharField(max_length=100)
+    def __str__(self):
+        return self.weekdays_startTime +" " + self.weekdays_endTime + ", " + self.weekends_startTime+ " " + self.weekends_endTime
+
+class Email(models.Model):
+    email_address  = models.TextField(max_length=100)
+    def __str__(self):
+        return self.email_address
+
+class Call(models.Model):
+    phone_number  = models.TextField(max_length=100)
+    def __str__(self):
+        return self.phone_number
 

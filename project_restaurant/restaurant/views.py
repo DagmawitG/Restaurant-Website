@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from .models import Hero,About,WhyUs,Footer
+from .models import *
 
 def home(request):
     context1 = {
@@ -11,7 +11,11 @@ def home(request):
         'whyUs': WhyUs.objects.all(),
 
         
-        'footer': Footer.objects.all().first()
+        'footer': Footer.objects.all().first(),
+        'location': Location.objects.all(),
+        'openHours': OpenHours.objects.all().first(),
+        'email': Email.objects.all(),
+        'call': Call.objects.all()
     }
     
     return render(request, 'restaurant/home.html',context1)
