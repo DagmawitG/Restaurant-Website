@@ -25,6 +25,17 @@ class WhyUs(models.Model):
     def __str__(self):
         return self.whyUsTitle
 
+class Footer(models.Model):
+    footerTitle = models.CharField(max_length=100)
+    footerBody = models.CharField(max_length=200)
+    twitterLink = models.TextField(max_length=100)
+    facebookLink = models.TextField(max_length=100)
+    instagramLink = models.TextField(max_length=100)
+    linkedinLink = models.TextField(max_length=100)
+    year = models.TextField(max_length=100, default='2021')
+    copyrightText = models.TextField(max_length=100)
+    def __str__(self):
+        return self.footerTitle
 
 
 
