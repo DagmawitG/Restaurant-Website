@@ -282,6 +282,7 @@
             <div class="row event-item">
               <div class="col-lg-6">
                 <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
+                <img src="{% static 'restaurant/images/event-custom.jpg' %}" class="img-fluid" alt="">
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0 content">
                 <h3>{{event.event_title}}</h3>
@@ -452,7 +453,11 @@
 
           {% for testimonial in testimonials%}
             <div class="testimonial-item">
+<<<<<<< HEAD
               
+=======
+              <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
+>>>>>>> 50dc78c055b587bb6a819b58c0e97af33385e9c9
               
               <h3>{{testimonial.testimonial_subject}}</h3>
               

@@ -9,6 +9,7 @@ admin.site.register(Footer)
 admin.site.register(Rating)
 
 
+
 admin.site.register(Location)
 admin.site.register(OpenHours)
 admin.site.register(Email)

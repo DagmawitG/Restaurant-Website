@@ -19,7 +19,8 @@ def home(request):
         'testimonials': Testimonial.objects.all(),
         'events': Event.objects.all(),
         'specials': Special.objects.all(),
-        'chefs':Chefs.objects.all()
+        'chefs':Chefs.objects.all(),
+        'specials': Special.objects.all()
 
   }
     
