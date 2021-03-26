@@ -281,6 +281,7 @@
           {% for event in events%}
             <div class="row event-item">
               <div class="col-lg-6">
+                <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
                 <img src="{% static 'restaurant/images/event-custom.jpg' %}" class="img-fluid" alt="">
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -423,54 +424,20 @@
         </div>
 
         <div class="row">
-
+          {% for chef in chefs %}
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 1.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic" id="chefSize"><img src="{{chef.chefImage.url}}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Yohannes </h4>
-                <span>Master Chef</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                <h4>{{chef.chefName}} </h4>
+                <span>{{chef.chefRole}}</span>
+                
               </div>
             </div>
           </div>
+          {% endfor %}
 
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 2.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Marcus</h4>
-                <span>Patissier</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 3.jfif' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Genet</h4>
-                <span>Cook</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
         </div>
 
@@ -486,7 +453,11 @@
 
           {% for testimonial in testimonials%}
             <div class="testimonial-item">
+<<<<<<< HEAD
+              
+=======
               <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
+>>>>>>> 50dc78c055b587bb6a819b58c0e97af33385e9c9
               
               <h3>{{testimonial.testimonial_subject}}</h3>
               

@@ -6,6 +6,8 @@ admin.site.register(Hero)
 admin.site.register(About)
 admin.site.register(WhyUs)
 admin.site.register(Footer)
+admin.site.register(Rating)
+
 
 
 admin.site.register(Location)
@@ -19,3 +21,4 @@ admin.site.register(DrinksMenu)
 admin.site.register(Testimonial)
 admin.site.register(Event)
 admin.site.register(Special)
+admin.site.register(Chefs)

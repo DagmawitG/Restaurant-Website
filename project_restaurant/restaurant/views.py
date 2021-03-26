@@ -18,6 +18,8 @@ def home(request):
         'drinksMenu': DrinksMenu.objects.all(),
         'testimonials': Testimonial.objects.all(),
         'events': Event.objects.all(),
+        'specials': Special.objects.all(),
+        'chefs':Chefs.objects.all(),
         'specials': Special.objects.all()
 
   }

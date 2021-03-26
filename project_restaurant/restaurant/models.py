@@ -120,6 +120,7 @@ class Event(models.Model):
     content_2  = models.TextField(verbose_name="Event Content 2", default='')
     content_3  = models.TextField(verbose_name="Event Content 3", default='')
     content  = models.TextField(verbose_name="Event Summary")
+    eventImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.event_title
 
@@ -130,3 +131,9 @@ class Special(models.Model):
     def __str__(self):
         return self.specialName
 
+class Chefs(models.Model):
+    chefName = models.CharField(max_length=100,verbose_name ="Chef's Name")
+    chefRole = models.CharField(max_length=100,verbose_name ="Chef's Role")
+    chefImage = models.ImageField(upload_to = "img/%y")
+    def __str__(self):
+        return self.chefName
