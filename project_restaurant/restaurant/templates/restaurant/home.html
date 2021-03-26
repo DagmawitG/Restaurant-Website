@@ -453,12 +453,6 @@
 
           {% for testimonial in testimonials%}
             <div class="testimonial-item">
-<<<<<<< HEAD
-              
-=======
-              <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
->>>>>>> 50dc78c055b587bb6a819b58c0e97af33385e9c9
-              
               <h3>{{testimonial.testimonial_subject}}</h3>
               
               <div class="stars">
@@ -539,7 +533,8 @@
           </div>
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <form action="{% url 'contactus' %}" method="POST" enctype="text/plain" role="form" class="php-email-form">
+          {% csrf_token %}
           <div class="form-row">
             <div class="col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -565,6 +560,7 @@
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
+
 
       </div>
     </section>
