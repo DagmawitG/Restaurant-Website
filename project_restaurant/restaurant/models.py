@@ -112,3 +112,13 @@ class Testimonial(models.Model):
     content  = models.TextField(verbose_name="Testimonial Content")
     def __str__(self):
         return self.testimonial_subject
+class Event(models.Model):
+    event_title  = models.TextField(max_length=100, verbose_name="Title")
+    price  = models.TextField(max_length=100, verbose_name="Event Price")
+    description  = models.TextField(verbose_name="Event Description", default = '')
+    content_1  = models.TextField(verbose_name="Event Content 1", default='')
+    content_2  = models.TextField(verbose_name="Event Content 2", default='')
+    content_3  = models.TextField(verbose_name="Event Content 3", default='')
+    content  = models.TextField(verbose_name="Event Summary")
+    def __str__(self):
+        return self.event_title
