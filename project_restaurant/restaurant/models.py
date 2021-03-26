@@ -96,4 +96,11 @@ class DrinksMenu(models.Model):
     drinksPrice = models.CharField(max_length=100, verbose_name="Price")
     def __str__(self):
         return self.drinksContent
-    
+
+class Special(models.Model):
+    specialName = models.CharField(max_length=100,verbose_name ="Special Food Name")
+    specialDescription =  models.TextField(verbose_name="Special Description")
+    specialImage = models.ImageField(upload_to = "img/%y")
+    def __str__(self):
+        return self.specialName
+       

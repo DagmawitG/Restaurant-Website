@@ -15,7 +15,8 @@ def home(request):
         'starterMenu': StarterMenu.objects.all(),
         'mainMenu': MainMenu.objects.all(),
         'dessertMenu': DessertMenu.objects.all(),
-        'drinksMenu': DrinksMenu.objects.all()
+        'drinksMenu': DrinksMenu.objects.all(),
+        'specials': Special.objects.all()
 
   }
     

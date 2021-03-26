@@ -13,5 +13,6 @@ admin.site.register(StarterMenu)
 admin.site.register(MainMenu)
 admin.site.register(DessertMenu)
 admin.site.register(DrinksMenu)
+admin.site.register(Special)
 
 

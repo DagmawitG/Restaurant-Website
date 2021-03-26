@@ -205,58 +205,55 @@
           <h2>Check our <span>Specials</span></h2>
          
         </div>
-
+        
         <div class="row">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-1">Kitfo</a>
+                <a class="nav-link active show" data-toggle="tab" href="#tab-{{specials.0.id}}">{{specials.0.specialName}}</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tab-{{specials.1.id}}">{{specials.1.specialName}}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Doro Wot</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Tibs</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-{{specials.2.id}}">{{specials.2.specialName}}</a>
               </li>
               
             </ul>
           </div>
           <div class="col-lg-9 mt-4 mt-lg-0">
             <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
+            {% for special in specials %}
+              {% if special.id == 1 %}
+              <div class="tab-pane active show" id="tab-{{special.id}}">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Kitfo</h3>
-                    <p class="font-italic">It is a traditional dish found in Ethiopian cuisine. </p>
-                    <p>It consists of minced raw beef, marinated in mitmita (a chili powder-based spice blend) and niter kibbeh (a clarified butter infused with herbs and spices).</p>
+                    <h3>{{special.specialName}}</h3>
+                    <p class="font-italic">{{special.specialDescription}}</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2" id="specialSize">
-                    <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
+                    <img src="{{special.specialImage.url}}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-2">
+
+              {% else %}
+              <div class="tab-pane" id="tab-{{special.id}}">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Doro Wot</h3>
-                    <p class="font-italic">It's made from chicken and sometimes hard-boiled eggs is the most popular traditional food in Ethiopia, often eaten as part of a group who share a communal bowl and basket of injera.</p>
+                    <h3>{{special.specialName}}</h3>
+                    <p class="font-italic">{{special.specialDescription}}</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2" id="specialSize">
-                    <img src="{% static 'restaurant/images/doro.jfif' %}" alt="" class="img-fluid">
+                    <img src="{{special.specialImage.url}}" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Tibs</h3>
-                    <p class="font-italic">It's an Ethiopian version of fajitas, seasoned with berbere spice and spicy awaze paste and served with injera bread for a filling and tasty African supper.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2" id="specialSize">
-                    <img src="{% static 'restaurant/images/tibs.jpg' %}" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
+              {% endif %}
+              {% endfor %}
+             
+              
               
                 </div>
               </div>
