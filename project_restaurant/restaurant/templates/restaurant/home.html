@@ -534,59 +534,26 @@
 
         <div class="owl-carousel testimonials-carousel">
 
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Thomas S</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
+          {% for testimonial in testimonials%}
+            <div class="testimonial-item">
+              <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
+              
+              <h3>{{testimonial.testimonial_subject}}</h3>
+              <h3>{{testimonial.rating.value}}</h3>
+              
+              <div class="stars">
+                {% with ''|center:testimonial.rating.value as range %}
+                  {% for _ in range %}
+                      <i class="icofont-star"></i>
+                  {% endfor %}
+                {% endwith %}
+              </div>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{testimonial.content}}
+              </p>
             </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Small and cozy place, with good space on the terrace. Very good food, different and delicious flavors and textures of Ethiopian cuisine. The presentation of the tasting plate great, and at a good price. Very nice attention too. Highly recommended              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Nacho Á</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              A very nice place: small and cozy, with the Ethiopian essence everywhere (from the decoration to the beers or the coffee and the desserts), very clean, with a tremendously friendly manager, from Ethiopia, and wonderfully tasty food. Without a doubt, a great corner of Barcelona that is worth going to.              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Rafa A</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              A pleasant surprise to discover this place, and the Ethiopian food, very well attended. It is recommended to try it !!              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-         
-          
+          {% endfor %}    
 
         </div>
 
