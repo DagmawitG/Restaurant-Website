@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Hero(models.Model):
     restaurantName = models.CharField(max_length=100, verbose_name="Restaurant name", default="El Deliciós d'Etiopia")
@@ -96,6 +97,31 @@ class DrinksMenu(models.Model):
     drinksPrice = models.CharField(max_length=100, verbose_name="Price")
     def __str__(self):
         return self.drinksContent
+class Rating(models.Model):
+    value  = models.IntegerField(
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ], verbose_name="Rating")
+    def __str__(self):
+        return str(self.value)
+
+class Testimonial(models.Model):
+    testimonial_subject  = models.TextField(max_length=100, verbose_name="Name")
+    rating  = models.ForeignKey(Rating, on_delete=models.CASCADE)
+    content  = models.TextField(verbose_name="Testimonial Content")
+    def __str__(self):
+        return self.testimonial_subject
+class Event(models.Model):
+    event_title  = models.TextField(max_length=100, verbose_name="Title")
+    price  = models.TextField(max_length=100, verbose_name="Event Price")
+    description  = models.TextField(verbose_name="Event Description", default = '')
+    content_1  = models.TextField(verbose_name="Event Content 1", default='')
+    content_2  = models.TextField(verbose_name="Event Content 2", default='')
+    content_3  = models.TextField(verbose_name="Event Content 3", default='')
+    content  = models.TextField(verbose_name="Event Summary")
+    def __str__(self):
+        return self.event_title
 
 class Special(models.Model):
     specialName = models.CharField(max_length=100,verbose_name ="Special Food Name")
@@ -103,4 +129,4 @@ class Special(models.Model):
     specialImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.specialName
-       
+
