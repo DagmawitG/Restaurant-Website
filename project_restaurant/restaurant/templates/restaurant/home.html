@@ -209,16 +209,19 @@
         <div class="row">
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
+            {% for special in specials %}
+              {% if special.id == 1 %}
               <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-{{specials.0.id}}">{{specials.0.specialName}}</a>
+                <a class="nav-link active show" data-toggle="tab" href="#tab-{{special.id}}">{{special.specialName}}</a>
               </li>
 
+              {% else %}
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-{{specials.1.id}}">{{specials.1.specialName}}</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-{{special.id}}">{{special.specialName}}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-{{specials.2.id}}">{{specials.2.specialName}}</a>
-              </li>
+              {% endif %}
+              {% endfor %}
+            
               
             </ul>
           </div>
@@ -275,80 +278,30 @@
 
         <div class="owl-carousel events-carousel">
 
-          <div class="row event-item">
-            <div class="col-lg-6">
-              <img src="{% static 'restaurant/images/event-birthday.jpg' %}" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content">
-              <h3>Birthday Parties</h3>
-              <div class="price">
-                <p><span>$189</span></p>
+          {% for event in events%}
+            <div class="row event-item">
+              <div class="col-lg-6">
+                <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
               </div>
-              <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur
-              </p>
-            </div>
-          </div>
-
-          <div class="row event-item">
-            <div class="col-lg-6">
-              <img src="{% static 'restaurant/images/event-private.jpg' %}" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content">
-              <h3>Private Parties</h3>
-              <div class="price">
-                <p><span>$290</span></p>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>{{event.event_title}}</h3>
+                <div class="price">
+                  <p><span>{{event.price}}</span></p>
+                </div>
+                <p class="font-italic">
+                  {{event.description}}
+                </p>
+                <ul>
+                  <li><i class="icofont-check-circled"></i> {{event.content_1}}</li>
+                  <li><i class="icofont-check-circled"></i> {{event.content_2}}</li>
+                  <li><i class="icofont-check-circled"></i> {{event.content_3}}</li>
+                </ul>
+                <p>
+                  {{event.content}}
+                </p>
               </div>
-              <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur
-              </p>
             </div>
-          </div>
-
-          <div class="row event-item">
-            <div class="col-lg-6">
-              <img src="{% static 'restaurant/images/event-custom.jpg' %}" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content">
-              <h3>Custom Parties</h3>
-              <div class="price">
-                <p><span>$99</span></p>
-              </div>
-              <p class="font-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur
-              </p>
-            </div>
-          </div>
+          {% endfor %}
 
         </div>
 
@@ -470,54 +423,20 @@
         </div>
 
         <div class="row">
-
+          {% for chef in chefs %}
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 1.jpg' %}" class="img-fluid" alt=""></div>
+              <div class="pic" id="chefSize"><img src="{{chef.chefImage.url}}" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Yohannes </h4>
-                <span>Master Chef</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
+                <h4>{{chef.chefName}} </h4>
+                <span>{{chef.chefRole}}</span>
+                
               </div>
             </div>
           </div>
+          {% endfor %}
 
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 2.jpg' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Marcus</h4>
-                <span>Patissier</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic" id="chefSize"><img src="{% static 'restaurant/images/chef 3.jfif' %}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Genet</h4>
-                <span>Cook</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+         
 
         </div>
 
@@ -531,59 +450,25 @@
 
         <div class="owl-carousel testimonials-carousel">
 
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Thomas S</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
+          {% for testimonial in testimonials%}
+            <div class="testimonial-item">
+              
+              
+              <h3>{{testimonial.testimonial_subject}}</h3>
+              
+              <div class="stars">
+                {% with ''|center:testimonial.rating.value as range %}
+                  {% for _ in range %}
+                      <i class="icofont-star"></i>
+                  {% endfor %}
+                {% endwith %}
+              </div>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                {{testimonial.content}}
+              </p>
             </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Small and cozy place, with good space on the terrace. Very good food, different and delicious flavors and textures of Ethiopian cuisine. The presentation of the tasting plate great, and at a good price. Very nice attention too. Highly recommended              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Nacho Á</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              A very nice place: small and cozy, with the Ethiopian essence everywhere (from the decoration to the beers or the coffee and the desserts), very clean, with a tremendously friendly manager, from Ethiopia, and wonderfully tasty food. Without a doubt, a great corner of Barcelona that is worth going to.              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="testimonial-img" alt="">
-            <h3>Rafa A</h3>
-            
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              A pleasant surprise to discover this place, and the Ethiopian food, very well attended. It is recommended to try it !!              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-         
-          
+          {% endfor %}    
 
         </div>
 
