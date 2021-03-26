@@ -11,7 +11,7 @@ def home(request):
         'location': Location.objects.all(),
         'openHours': OpenHours.objects.all().first(),
         'email': Email.objects.all(),
-        'call': Call.objects.all()
+        'call': Call.objects.all(),
         'starterMenu': StarterMenu.objects.all(),
         'mainMenu': MainMenu.objects.all(),
         'dessertMenu': DessertMenu.objects.all(),
