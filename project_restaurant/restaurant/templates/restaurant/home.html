@@ -135,122 +135,60 @@
               <li data-filter="*" class="filter-active">Show All</li>
               <li data-filter=".filter-starters">Starters</li>
               <li data-filter=".filter-main">Main</li>
-              <li data-filter=".filter-desserts">Desserts</li>
+              <li data-filter=".filter-desserts">Dessert</li>
               <li data-filter=".filter-drinks">Drinks</li>
             </ul>
           </div>
         </div>
 
         <div class="row menu-container">
-
+          {% for starter in starterMenu %}
           <div class="col-lg-6 menu-item filter-starters">
             <div class="menu-content">
-              <a href="#">Chicken Soup</a><span>$5.95</span>
+              <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
             </div>
             <div class="menu-ingredients">
-              Chicken,Cream
+              {{starter.starterDesc}}
             </div>
           </div>
+          {% endfor %}
 
+
+
+          {% for main in mainMenu %}
           <div class="col-lg-6 menu-item filter-main">
             <div class="menu-content">
-              <a href="#">Kitfo</a><span>$5.95</span>
+              <a href="#">{{main.mainContent}}</a><span>{{main.mainPrice}}</span>
             </div>
             <div class="menu-ingredients">
-              Red Meat,Butter, Ethiopian Spices
+              {{main.mainDesc}}
             </div>
           </div>
+          {% endfor %}
 
+          {% for dessert in dessertMenu %}
           <div class="col-lg-6 menu-item filter-desserts">
             <div class="menu-content">
-              <a href="#">Tiramsu</a><span>$5.95</span>
+              <a href="#">{{dessert.dessertContent}}</a><span>{{dessert.dessertPrice}}</span>
             </div>
             <div class="menu-ingredients">
-             A delicious tiramsu cake
+              {{dessert.dessertDesc}}
             </div>
           </div>
+          {% endfor %}
 
+          {% for drinks in drinksMenu %}
           <div class="col-lg-6 menu-item filter-drinks">
             <div class="menu-content">
-              <a href="#">Harar Beer</a><span>$5.95</span>
+              <a href="#">{{drinks.drinksContent}}</a><span>{{drinks.drinksPrice}}</span>
             </div>
             <div class="menu-ingredients">
-              Nice Cold beer
+              {{drinks.drinksDesc}}
             </div>
           </div>
+          {% endfor %}
 
-          <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">Crab Cake</a><span>$7.95</span>
-            </div>
-            <div class="menu-ingredients">
-              A delicate crab cake served on a toasted roll with lettuce and tartar sauce
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-main">
-            <div class="menu-content">
-              <a href="#">Beyaynet</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-             Misir Wot, Shero Wot, Gomen
-            </div>
-          </div>
-         
-
-          <div class="col-lg-6 menu-item filter-desserts">
-            <div class="menu-content">
-              <a href="#">Ice cream</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Vanilla, Chocolate, Oreo , Caramel
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-drinks">
-            <div class="menu-content">
-              <a href="#">Walya Beer</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Nice Cold beer
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">Tomato and cucumber salad</a><span>$4.95</span>
-            </div>
-            <div class="menu-ingredients">
-              tomatoes, onions, cucumbers and green peppers
-            </div>
-          </div>
-
-         
-
-          <div class="col-lg-6 menu-item filter-main">
-            <div class="menu-content">
-              <a href="#">Tibs</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Sliced beef or lamb, pan-fried in butter, garlic and onion
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-desserts">
-            <div class="menu-content">
-              <a href="#">Lobster Roll</a><span>$12.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
-            </div>
-          </div>
-          <div class="col-lg-6 menu-item filter-drinks">
-            <div class="menu-content">
-              <a href="#">Giorgis Beer</a><span>$5.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Nice Cold beer
-            </div>
-          </div>
+          
 
         </div>
 
