@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'restaurant.apps.RestaurantConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',

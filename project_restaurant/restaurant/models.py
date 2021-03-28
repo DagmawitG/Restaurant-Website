@@ -143,3 +143,13 @@ class Chef(models.Model):
     chefImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.chefName
+class Reservation(models.Model):
+    your_name = models.CharField(max_length = 50)
+    your_phone = models.CharField(max_length = 50)
+    your_email = models.EmailField(max_length = 50)
+    date = models.CharField(max_length = 50)
+    time = models.CharField(max_length = 50)
+    number_of_people = models.EmailField(max_length = 50)
+    message = models.CharField(max_length = 2000)
+    def __str__(self):
+        return self.chefName
