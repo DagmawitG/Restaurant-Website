@@ -1449,7 +1449,10 @@ section {
   border-radius: 50px;
   transition: all 0.3s ease-in-out;
 }
-
+.contact .info i.bx {
+  width: 6rem;
+  height: 6rem;
+}
 .contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 18px;

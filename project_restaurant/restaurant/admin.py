@@ -9,9 +9,9 @@ admin.site.register(Footer)
 admin.site.register(Rating)
 
 
-
+admin.site.register(Link)
 admin.site.register(Location)
-admin.site.register(OpenHours)
+admin.site.register(OpeningHour)
 admin.site.register(Email)
 admin.site.register(Call)
 admin.site.register(StarterMenu)
@@ -21,4 +21,4 @@ admin.site.register(DrinksMenu)
 admin.site.register(Testimonial)
 admin.site.register(Event)
 admin.site.register(Special)
-admin.site.register(Chefs)
+admin.site.register(Chef)

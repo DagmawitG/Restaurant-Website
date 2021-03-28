@@ -29,14 +29,20 @@ class WhyUs(models.Model):
 class Footer(models.Model):
     footerTitle = models.CharField(max_length=100, verbose_name="Restaurant name", default="El Deliciós d'Etiopia")
     footerBody = models.CharField(max_length=200, verbose_name="Restaurant Motto", default='Fresh and Delicious Ethiopian Food just for you!')
-    twitterLink = models.TextField(max_length=100, verbose_name="Twitter Link")
-    facebookLink = models.TextField(max_length=100, verbose_name="Facebook Link")
-    instagramLink = models.TextField(max_length=100, verbose_name="Instagram Link")
-    linkedinLink = models.TextField(max_length=100, verbose_name="LinkedIn Link")
     year = models.TextField(max_length=100, default='2021', verbose_name="Year")
     copyrightText = models.TextField(max_length=100, verbose_name="Copyright text")
     def __str__(self):
         return self.footerTitle
+
+class Link(models.Model):
+    twitterLink = models.TextField(max_length=100, verbose_name="Twitter Link")
+    facebookLink = models.TextField(max_length=100, verbose_name="Facebook Link")
+    instagramLink = models.TextField(max_length=100, verbose_name="Instagram Link")
+    linkedinLink = models.TextField(max_length=100, verbose_name="LinkedIn Link")
+    whatsappLink = models.TextField(max_length=100, verbose_name="WhatsApp Link")
+    telegramLink = models.TextField(max_length=100, verbose_name="Telegram Link")
+
+
 
 class Location(models.Model):
     avenue = models.CharField(max_length=200, verbose_name="Avenue")
@@ -45,7 +51,7 @@ class Location(models.Model):
     def __str__(self):
         return self.avenue +" " + self.city +", "+ self.country
 
-class OpenHours(models.Model):
+class OpeningHour(models.Model):
     weekdays_startTime  = models.CharField(max_length=100, verbose_name="Weekdays Opening time")
     weekdays_endTime = models.CharField(max_length=100, verbose_name="Weekdays Closing time")
     weekends_startTime  = models.CharField(max_length=100, verbose_name="Weekends Opening time")
@@ -131,7 +137,7 @@ class Special(models.Model):
     def __str__(self):
         return self.specialName
 
-class Chefs(models.Model):
+class Chef(models.Model):
     chefName = models.CharField(max_length=100,verbose_name ="Chef's Name")
     chefRole = models.CharField(max_length=100,verbose_name ="Chef's Role")
     chefImage = models.ImageField(upload_to = "img/%y")
