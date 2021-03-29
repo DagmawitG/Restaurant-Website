@@ -1,6 +1,8 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
 from .models import *
+from .forms import *
+
 
 def home(request):
     context1 = {
@@ -26,5 +28,3 @@ def home(request):
     
     return render(request, 'restaurant/home.html',context1)
     
-def about(request):
-    return render(request, 'restaurant/about.html', {'title': "About"})
