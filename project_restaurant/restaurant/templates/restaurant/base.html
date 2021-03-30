@@ -54,7 +54,7 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
             <li class="active"><a href="{% url 'restaurant-home'%}">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="{% url 'reservation'%}">About</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#specials">Specials</a></li>
             <li><a href="#events">Events</a></li>
@@ -62,7 +62,7 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
 
-            <li class="book-a-table text-center"><a href="#book-a-table">Book a table</a></li>
+            <li class="book-a-table text-center"><a href="{% url 'reservation'%}"><i class="icofont-food-cart"></i> Delivery</a></li>
             </ul>
         </nav>
         </div>
@@ -79,7 +79,7 @@
   {% block specials %} {% endblock %}
 
   {% block events %} {% endblock %}
-  
+
   {% block book-a-table %} {% endblock %}
 
   {% block gallery %} {% endblock %}
@@ -97,10 +97,10 @@
         <h3>{{ footer.footerTitle }}</h3>
         <p>{{ footer.footerBody }}</p>
         <div class="social-links">
-            <a href="{{ footer.twitterLink }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="{{ footer.facebookLink }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="{{ footer.instagramLink }}" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="{{ footer.linkedinLink }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="{{ links.twitterLink }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="{{ links.facebookLink }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="{{ links.instagramLink }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="{{ links.linkedinLink }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
         <div class="copyright">
             &copy; Copyright {{ footer.year }} <strong><span>{{ footer.footerTitle }}</span></strong>. {{ footer.copyrightText }}

@@ -1,0 +1,39 @@
+{% extends "restaurant/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+  {% block book-a-table %} 
+    <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" id="sliderImage" >
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <section id="book-a-table" class="book-a-table">
+                  <div class="container">
+
+                    <div class="section-title">
+                      <h2>Book a <span>Table</span></h2>
+                    
+                    </div>
+                    <form class="php-email-form">
+                    {{ form|crispy }}
+                    </form>
+
+                  </div>
+                </section>                  
+              </div>
+            </div>
+          </div>       
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
