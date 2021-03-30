@@ -153,3 +153,17 @@ class Reservation(models.Model):
     message = models.CharField(max_length = 2000)
     def __str__(self):
         return self.chefName
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
+class OrderModel(models.Model):
+    created_on = models.DateTimeField(auto_now_add=True)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+    starterItems = models.ManyToManyField('StarterMenu', related_name='order', blank=True)
+    mainItems = models.ManyToManyField('MainMenu', related_name='order', blank=True)
+    dessertItems = models.ManyToManyField('DessertMenu', related_name='order', blank=True)
+    drinkItems = models.ManyToManyField('DrinksMenu', related_name='order', blank=True)
+    def __str__(self):
+        return f'Order: {self.created_on.strftime("%b %d %Y %I:%M %p")}'

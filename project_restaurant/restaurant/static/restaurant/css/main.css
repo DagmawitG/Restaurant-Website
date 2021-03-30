@@ -10,6 +10,9 @@
     border-radius: 60%;
 }
 
+.topper{
+    margin-top: 3rem!important;
+}
 #chefSize img{
     height: 300px;
     width: 300px;

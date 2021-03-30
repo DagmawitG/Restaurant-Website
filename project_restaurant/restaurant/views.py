@@ -3,6 +3,56 @@ from django.shortcuts import render, redirect
 from .forms import *
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from django.views import View
+
+class Order(View):
+    def get(self, request, *args, **kwargs):
+        appetizers = StarterMenu.objects.filter(starterOption='Starter')
+        entres = MainMenu.objects.filter(mainOption='Main')
+        desserts = DessertMenu.objects.filter(dessertOption='Dessert')
+        drinks = DrinksMenu.objects.filter(drinksOption='Drink')
+        context = {
+            'appetizers': appetizers,
+            'entres': entres,
+            'desserts': desserts,
+            'drinks': drinks,
+            'heros' : Hero.objects.all(),
+            'links': Link.objects.all().first(),
+            'footer': Footer.objects.all().first(),
+        }
+        return render(request, 'users/order.html', context)
+    def post(self, request, *args, **kwargs):
+        order_items = {
+            'items': []
+        }
+        items = request.POST.getlist('items[]')
+        for item in items:
+            menu_item = MenuItem.objects.get(pk__contains=int(item))
+            item_data = {
+                'id': menu_item.pk,
+                'name': menu_item.name,
+                'price': menu_item.price,
+            }
+            order_items['items'].append(item_data)
+        
+        price = 0
+        item_ids = []
+        for item in order_items['items']:
+            price += item['price']
+            item_ids.append(item['id'])
+        
+        order = OrderModel.objects.create(price=price)
+        order.items.add(*item_ids)
+        context = {
+            'items': order_items['items'],
+            'price': price,
+            'heros' : Hero.objects.all(),
+            'links': Link.objects.all().first(),
+            'footer': Footer.objects.all().first(),
+                
+        }
+        return render(request, 'users/order_confirmation.html', context)
+
 
 def home(request):
     context1 = {

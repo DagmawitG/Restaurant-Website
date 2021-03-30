@@ -1,0 +1,116 @@
+{% extends "restaurant/base.html" %}
+
+{% block events %} 
+    <section id="events" class="events">
+      <div class="container">
+
+        <div class="section-title topper">
+          <h2>Order <span>Food</span></h2>
+        </div>
+
+        <div class="owl-carousel events-carousel">
+
+          {% for event in events%}
+            <div class="row event-item">
+              <div class="col-lg-6">
+                <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
+                
+              </div>
+              <div class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>{{event.event_title}}</h3>
+                <div class="price">
+                  <p><span>{{event.price}}</span></p>
+                </div>
+                <p class="font-italic">
+                  {{event.description}}
+                </p>
+                <ul>
+                  <li><i class="icofont-check-circled"></i> {{event.content_1}}</li>
+                  <li><i class="icofont-check-circled"></i> {{event.content_2}}</li>
+                  <li><i class="icofont-check-circled"></i> {{event.content_3}}</li>
+                </ul>
+                <p>
+                  {{event.content}}
+                </p>
+              </div>
+            </div>
+          {% endfor %}
+
+                          <form method="POST">
+                    {% csrf_token %}
+                    <div class="pt-5">
+                        {% for app in appetizers %}
+                        <div class="row event-item">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="d-flex flex-row">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="items[]" class="form-check-input" value="{{ app.pk }}">
+                                        <label class="form-check-label">{{ app.starterContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ app.starterPrice }}</p>
+                                </div>
+                                <p>{{ app.starterDesc }}</p>
+                            </div>
+                        </div>
+                        <hr />
+                    {% endfor %}
+                    </div>
+                    <div class="pt-5">
+                        {% for entre in entres %}
+                        <div class="row event-item mt-4">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="d-flex flex-row">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="items[]" class="form-check-input" value="{{ entre.pk }}">
+                                        <label class="form-check-label">{{ entre.mainContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ entre.mainPrice }}</p>
+                                </div>
+                                <p>{{ entre.mainDesc }}</p>
+                            </div>
+                        </div>
+                        <hr />
+                        {% endfor %}
+                    </div>
+                    <div class="pt-5">
+                        {% for dessert in desserts %}
+                        <div class="row event-item mt-4">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="d-flex flex-row">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="items[]" class="form-check-input" value="{{ dessert.pk }}">
+                                        <label class="form-check-label">{{ dessert.dessertContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
+                                </div>
+                                <p>{{ dessert.dessertDesc }}</p>
+                            </div>
+                        </div>
+                        <hr />
+                        {% endfor %}
+                    </div>
+                    <div class="pt-5">
+                        {% for drink in drinks %}
+                        <div class="row event-item mt-4">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="d-flex flex-row">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="items[]" class="form-check-input" value="{{ drink.pk }}">
+                                        <label class="form-check-label">{{ drink.drinksContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
+                                </div>
+                                <p>{{ drink.drinksDesc }}</p>
+                            </div>
+                        </div>
+                        <hr />
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-dark mt-5">Place Order!</button>
+                </form>
+
+        </div>
+
+      </div>
+    </section>
+{% endblock events %}
