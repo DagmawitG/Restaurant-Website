@@ -1,13 +1,8 @@
 from .models import *
-<<<<<<< HEAD
-from .forms import *
-
-=======
 from django.shortcuts import render, redirect
-from .forms import ReservationForm
+from .forms import *
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
->>>>>>> 24a9e0af974d92b9aceaf47e1e72add9ce67b862
 
 def home(request):
     context1 = {

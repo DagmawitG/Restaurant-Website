@@ -126,10 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,"/media")
-<<<<<<< HEAD
-=======
-
 DEFAULT_FROM_EMAIL = "mail@example.com"
 EMAIL_HOST = "localhost"
 EMAIL_PORT = "1025"
->>>>>>> 24a9e0af974d92b9aceaf47e1e72add9ce67b862
