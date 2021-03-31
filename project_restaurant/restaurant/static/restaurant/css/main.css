@@ -32,9 +32,19 @@
     color: white;
 }
 #bg-new{
-    background: rgba(70, 70, 70, 0.6);
+    background: rgba(70, 70, 70, 0.8);
 }
 #bcg{
     background-image: url('../images/ethiopian-cultural-dining.jpg' ) ;
     background: cover no-repeat !important
+    
+}
+#bcg::before {
+    content: '';
+    background-color: rgba(12, 11, 10, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
