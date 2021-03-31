@@ -5,6 +5,6 @@ from . import reservation
 
 urlpatterns = [
     path('', views.home, name='restaurant-home'),
-    path("reserve", reservation.MyObjectReservation.as_view()),
-    path('reservation', views.reservation, name='reservation'),
+    # path("reserve", reservation.MyObjectReservation.as_view()),
+    path('reservation.html', views.reservation, name='reservation'),
 ]

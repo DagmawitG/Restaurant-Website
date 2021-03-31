@@ -1,8 +1,8 @@
 from .models import *
 from django.shortcuts import render, redirect
 from .forms import *
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
+from django.core.mail import send_mail
+
 
 def home(request):
     context1 = {
@@ -31,46 +31,36 @@ def home(request):
 
 
 def reservation(request):
-    context1 = {
-        'heros' : Hero.objects.all(),
-        'aboutUs': About.objects.all(),
-        'whyUs': WhyUs.objects.all(),
-        'footer': Footer.objects.all().first(),
-        'location': Location.objects.all(),
-        'openHours': OpeningHour.objects.all().first(),
-        'email': Email.objects.all(),
-        'call': Call.objects.all(),
-        'starterMenu': StarterMenu.objects.all(),
-        'mainMenu': MainMenu.objects.all(),
-        'dessertMenu': DessertMenu.objects.all(),
-        'drinksMenu': DrinksMenu.objects.all(),
-        'testimonials': Testimonial.objects.all(),
-        'events': Event.objects.all(),
-        'specials': Special.objects.all(),
-        'chefs':Chef.objects.all(),
-        'specials': Special.objects.all(),
-        'links': Link.objects.all().first()
+    
+   
+    if request.method == "POST":
+        your_name = request.POST['name']
+        your_phone = request.POST['phone']
+        your_email = request.POST['email']
+        date = request.POST['date']
+        time = request.POST['time']
+        number_of_people = request.POST['people']
+        message = request.POST['message']
+        
+        reservation = "Name:" + your_name + " /n Phone:" + your_phone + "/n Email:" + your_email + "/n Date:" + date + "/n Time:" + time + " /n Number of People" + number_of_people + "/n Message:" + message
+        send_mail(
+            'Reservation Request',
+            reservation,
+            your_email,
+            ['se.dagmawit.getachew@gmail.com'],
+        )
 
-    } 
-
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            body = {
-            'your_name': form.cleaned_data['your_name'], 
-            'your_phone': form.cleaned_data['your_phone'], 
-            'your_email': form.cleaned_data['your_email'], 
-            'date': form.cleaned_data['date'], 
-            'number_of_people': form.cleaned_data['number_of_people'], 
-            'message':form.cleaned_data['message']
-                }
-            messages.success(request, 'Your reservation is now being processed, {name}!'.format(name = body['your_name']))
-            return redirect('restaurant-home')
-        else:
-            messages.error(request, 'Reservation not created')
-
+        return render(request, 'restaurant/reservation.html', {
+        'your_name':your_name,
+        'your_phone':your_phone,
+        'your_email':your_email,
+        'date':date,
+        'time':time,
+        'number_of_people':number_of_people,
+        'message':message, })
     else:
-        form = ReservationForm()
-    context1['form'] = form
-    return render(request, "restaurant/reservation.html", context1)
+        return render(request, 'restaurant/home.html',{})
+
+    
+
+  
