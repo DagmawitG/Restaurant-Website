@@ -11,7 +11,7 @@
 }
 
 .topper{
-    margin-top: 3rem!important;
+    margin-top: 4rem!important;
 }
 #chefSize img{
     height: 300px;
@@ -24,4 +24,17 @@
 }
 .reservation{
     margin-top: 40rem
+}
+.pt-2 h2{
+    color: #ffb03b;
+}
+.clr{
+    color: white;
+}
+#bg-new{
+    background: rgba(70, 70, 70, 0.6);
+}
+#bcg{
+    background-image: url('../images/ethiopian-cultural-dining.jpg' ) ;
+    background: cover no-repeat !important
 }

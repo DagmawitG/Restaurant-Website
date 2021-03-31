@@ -997,7 +997,7 @@ section {
 # Events
 --------------------------------------------------------------*/
 .events {
-  background: url(../img/events-bg.jpg) center center no-repeat;
+  background: url(../imgages/events-bg.jpg) center center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1211,7 +1211,7 @@ section {
 # Chefs
 --------------------------------------------------------------*/
 .chefs {
-  background: url("../img/chefs-bg.jpg") center center no-repeat;
+  background: url("../imgages/chefs-bg.jpg") center center no-repeat;
   background-size: cover;
   padding: 60px 0;
   position: relative;

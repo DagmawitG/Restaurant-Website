@@ -161,6 +161,10 @@ class Category(models.Model):
 class OrderModel(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=7, decimal_places=2)
+    name = models.CharField(max_length = 50)
+    phone = models.CharField(max_length = 50)
+    email = models.EmailField(max_length = 50)
+    location = models.CharField(max_length = 50)
     starterItems = models.ManyToManyField('StarterMenu', related_name='order', blank=True)
     mainItems = models.ManyToManyField('MainMenu', related_name='order', blank=True)
     dessertItems = models.ManyToManyField('DessertMenu', related_name='order', blank=True)
