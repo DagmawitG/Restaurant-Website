@@ -1,4 +1,3 @@
-{% extends "restaurant/base.html" %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -57,12 +56,12 @@
             <ul>
             <li class="active"><a href="{% url 'restaurant-home'%}">Home</a></li>
             <li><a href="{% url 'reservation'%}">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#specials">Specials</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#chefs">Chefs</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Menu</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Specials</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Events</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Chefs</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Gallery</a></li>
+            <li><a href="{% url 'restaurant-home'%}">Contact</a></li>
 
             <li class="book-a-table text-center"><a href="{% url 'reservation'%}"><i class="icofont-food-cart"></i> Delivery</a></li>
             </ul>
@@ -70,7 +69,7 @@
         </div>
     </header>
 <br><br><br><br>
-<main id="main"> 
+<div>
 <center>
   <h1>Review Your Information:</h1>
   <!-- <strong>Your name:</strong> {{your_name}} -->
@@ -82,28 +81,30 @@
   <strong>Message:</strong> {{message}}
   <br>
   <br><br><br>
-<strong>We will contact you shortly to confirm your reservation.</strong>
+<strong>We will contact you shortly to confirm your reservation!</strong>
 <br><br><br>
 
 </center>
 
+</div>
 
-</main>
+
 <footer id="footer">
     <div class="container">
-    {% if footer %}
-    <h3>{{ footer.footerTitle }}</h3>
-    <p>{{ footer.footerBody }}</p>
+    <!-- {% if footer %} -->
+    <h3>El Delicios d'Etiopia</h3>
+    <!-- <p>{{ footer.footerBody }}</p> -->
+    <p>best ethiopian restaurant in town</p>
     <div class="social-links">
-        <a href="{{ links.twitterLink }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="{{ links.facebookLink }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="{{ links.instagramLink }}" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="{{ links.linkedinLink }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="# class="linkedin"><i class="bx bxl-linkedin"></i></a>
     </div>
     <div class="copyright">
         &copy; Copyright {{ footer.year }} <strong><span>{{ footer.footerTitle }}</span></strong>. {{ footer.copyrightText }}
     </div>
-    {% endif %}
+    <!-- {% endif %} -->
     
     </div>
 </footer>

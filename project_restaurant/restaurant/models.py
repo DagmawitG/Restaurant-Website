@@ -133,7 +133,7 @@ class Event(models.Model):
 class Special(models.Model):
     specialName = models.CharField(max_length=100,verbose_name ="Special Food Name")
     specialDescription =  models.TextField(verbose_name="Special Description")
-    specialImage = models.ImageField(upload_to = "img/%y")
+    specialImage = models.ImageField(upload_to = "images")
     def __str__(self):
         return self.specialName
 
