@@ -283,7 +283,8 @@
           {% for event in events%}
             <div class="row event-item">
               <div class="col-lg-6">
-                <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
+                {% comment %} <img src="{{event.eventImage.url}}" class="img-fluid" alt=""> {% endcomment %}
+                <img src="{% static 'restaurant/images/event-private.jpg' %}" class="img-fluid" alt="">
                 
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -426,7 +427,10 @@
           {% for chef in chefs %}
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic" id="chefSize"><img src="{{chef.chefImage.url}}" class="img-fluid" alt=""></div>
+              <div class="pic" id="chefSize">
+                {% comment %} <img src="{{chef.chefImage.url}}" class="img-fluid" alt=""> {% endcomment %}
+                <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="img-fluid" alt="">
+              </div>
               <div class="member-info">
                 <h4>{{chef.chefName}} </h4>
                 <span>{{chef.chefRole}}</span>

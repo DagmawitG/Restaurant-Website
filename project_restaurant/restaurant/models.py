@@ -118,6 +118,8 @@ class Testimonial(models.Model):
     content  = models.TextField(verbose_name="Testimonial Content")
     def __str__(self):
         return self.testimonial_subject
+        
+# eventImage = models.ImageField(upload_to = "img/%y")
 class Event(models.Model):
     event_title  = models.TextField(max_length=100, verbose_name="Title")
     price  = models.TextField(max_length=100, verbose_name="Event Price")
@@ -126,7 +128,6 @@ class Event(models.Model):
     content_2  = models.TextField(verbose_name="Event Content 2", default='')
     content_3  = models.TextField(verbose_name="Event Content 3", default='')
     content  = models.TextField(verbose_name="Event Summary")
-    eventImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.event_title
 
@@ -136,11 +137,10 @@ class Special(models.Model):
     specialDescription =  models.TextField(verbose_name="Special Description")
     def __str__(self):
         return self.specialName
-
+# chefImage = models.ImageField(upload_to = "img/%y")  
 class Chef(models.Model):
     chefName = models.CharField(max_length=100,verbose_name ="Chef's Name")
     chefRole = models.CharField(max_length=100,verbose_name ="Chef's Role")
-    chefImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.chefName
 class Reservation(models.Model):
