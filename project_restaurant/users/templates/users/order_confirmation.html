@@ -1,0 +1,39 @@
+{% extends "restaurant/base.html" %}
+
+{% block events %} 
+    <section id="bcg" class="events">
+      <div class="container">
+
+        <div class="section-title topper pt-2">
+          <h2>Order <span>Submitted!</span></h2>
+            <p class='clr'>You should receive a confirmation email soon.</p>
+        </div>
+
+        <div class="owl-carousel events-carousel" id='bg-new'>        
+
+            <div class="pt-2">
+                <div class="row justify-content-center">
+                    <div class="col-md-5 col-sm-12 text-center event-item">
+                        <h3 class="pb-3">Order Summary:</h3>
+                        {% for item in app_items %}
+                            <p>{{ item.amount }} <span class="pl-3">{{ item.name }} <span class="pl-3">{{ item.price }} Each</span></p>
+                        {% endfor %}
+                        {% for item in main_items %}
+                            <p>{{ item.amount }} <span class="pl-3">{{ item.name }} <span class="pl-3">{{ item.price }} Each</span></p>
+                        {% endfor %}
+                        {% for item in dessert_items %}
+                            <p>{{ item.amount }} <span class="pl-3">{{ item.name }} <span class="pl-3">{{ item.price }} Each</span></p>
+                        {% endfor %}
+                        {% for item in drink_items %}
+                            <p>{{ item.amount }} <span class="pl-3">{{ item.name }} <span class="pl-3">{{ item.price }} Each</span></p>
+                        {% endfor %}
+                        <p class="font-weight-bold pt-4">Total: ${{ price }}</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+      </div>
+    </section>
+{% endblock events %}

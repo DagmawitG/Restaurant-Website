@@ -1,0 +1,150 @@
+{% extends "restaurant/base.html" %}
+
+{% block events %} 
+    <section id="bcg" class="events">
+        <div class="container">
+
+        <div class="section-title topper">
+          <h2>Order <span>Food</span></h2>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <div class='alert alert-{{ message.tags }}'>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="owl-carousel events-carousel" id='bg-new'>        
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="pt-2">
+                <h2>Details</h2>
+                    <div class="row event-item">
+                        <div class="col-lg-6 mt-5">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-input ml-5 mt-0">
+                                    <input type="text" name="name" class="form-check-input w-75" placeholder="Your Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-5">
+                            <div class="d-flex flex-row">
+                                
+                                <div class="form-group form-input ml-5 mt-0">
+                                    <input type="email" name="email" class="form-check-input w-75" placeholder="Your Email address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row event-item mb-3">
+                        <div class="col-lg-6 mt-5">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-input  ml-5 mt-0">
+                                    <input type="tel" name="phone_number" class="form-check-input w-75" placeholder="Your Phone number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-5">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-input  ml-5 mt-0">
+                                    <input type="text" name="location" class="form-check-input w-75" placeholder="Your Street location">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class='mt-5' />
+                </div>
+                <div class="pt-2">
+                <h2>Appetizers</h2>
+                    {% for app in appetizers %}
+                        <div class="row event-item">
+                            <div class="col-md-8 col-sm-12">
+                                <div class="d-flex flex-row">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="app_items[]" class="form-check-input" value="{{ app.pk }}">
+                                        <label class="form-check-label">{{ app.starterContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ app.starterPrice }}</p>
+                                    <div class="form-group form-input ml-5 mt-0">
+                                        <input type="number" name="app-items-{{ app.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                    </div>
+                                </div>
+                                <p>{{ app.starterDesc }}</p>
+                            </div>
+                        </div>
+                        <hr />
+                    {% endfor %}
+                </div>
+                <div class="pt-2">
+                <h2>Main Dish</h2>
+                    {% for entre in entres %}
+                    <div class="row event-item mt-4">
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="main_items[]" class="form-check-input" value="{{ entre.pk }}">
+                                    <label class="form-check-label">{{ entre.mainContent }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ entre.mainPrice }}</p>
+                                <div class="form-group form-input ml-5 mt-0">
+                                        <input type="number" name="entre-items-{{ entre.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                    </div>
+                            </div>
+                            <p>{{ entre.mainDesc }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+                <div class="pt-2">
+                <h2>Desserts</h2>
+                    {% for dessert in desserts %}
+                    <div class="row event-item mt-4">
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="dessert_items[]" class="form-check-input" value="{{ dessert.pk }}">
+                                    <label class="form-check-label">{{ dessert.dessertContent }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
+                                <div class="form-group form-input ml-5 mt-0">
+                                        <input type="number" name="dessert-items-{{ dessert.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                    </div>
+                            </div>
+                            <p>{{ dessert.dessertDesc }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+                <div class="pt-2">
+                <h2>Drinks</h2>
+                    {% for drink in drinks %}
+                    <div class="row event-item mt-4">
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="drink_items[]" class="form-check-input" value="{{ drink.pk }}">
+                                    <label class="form-check-label">{{ drink.drinksContent }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
+                                <div class="form-group form-input ml-5 mt-0">
+                                        <input type="number" name="drink-items-{{ drink.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                    </div>
+                            </div>
+                            <p>{{ drink.drinksDesc }}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+                <button class="btn btn-dark mt-5">Place Order!</button>
+            </form>
+
+        </div>
+
+      </div>
+    </section>
+{% endblock events %}

@@ -10,6 +10,9 @@
     border-radius: 60%;
 }
 
+.topper{
+    margin-top: 4rem!important;
+}
 #chefSize img{
     height: 300px;
     width: 300px;
@@ -21,4 +24,27 @@
 }
 .reservation{
     margin-top: 40rem
+}
+.pt-2 h2{
+    color: #ffb03b;
+}
+.clr{
+    color: white;
+}
+#bg-new{
+    background: rgba(70, 70, 70, 0.8);
+}
+#bcg{
+    background-image: url('../images/ethiopian-cultural-dining.jpg' ) ;
+    background: cover no-repeat !important
+    
+}
+#bcg::before {
+    content: '';
+    background-color: rgba(12, 11, 10, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }

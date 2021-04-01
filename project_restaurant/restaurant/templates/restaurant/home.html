@@ -18,7 +18,7 @@
                 <h2 class="animate__animated animate__fadeInDown"><span>{{hero.restaurantName}}</span> Restaurant</h2>
                 <p class="animate__animated animate__fadeInUp">{{hero.restaurantMotto}}</p>
                 <div>
-                    <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Order Delivery</a>
+                    <a href="{% url 'order'%}" class="btn-book animate__animated animate__fadeInUp scrollto">Order Delivery</a>
                     <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
                 </div>
               </div>
@@ -228,7 +228,7 @@
           <div class="col-lg-9 mt-4 mt-lg-0">
             <div class="tab-content">
             {% for special in specials %}
-              {% if special.id == 1 %}
+              {% if special.id == 2 %}
               <div class="tab-pane active show" id="tab-{{special.id}}">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
@@ -236,7 +236,8 @@
                     <p class="font-italic">{{special.specialDescription}}</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2" id="specialSize">
-                    <img src="{{special.specialImage.url}}" alt="" class="img-fluid">
+                    <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
+                    {% comment %} <img src="{{special.specialImage.url}}" alt="" class="img-fluid"> {% endcomment %}
                   </div>
                 </div>
               </div>
@@ -249,7 +250,8 @@
                     <p class="font-italic">{{special.specialDescription}}</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2" id="specialSize">
-                    <img src="{{special.specialImage.url}}" alt="" class="img-fluid">
+                    <img src="{% static 'restaurant/images/tibs.jpg' %}" alt="" class="img-fluid">
+                    {% comment %} <img src="{{special.specialImage.url}}" alt="" class="img-fluid"> {% endcomment %}
                   </div>
                 </div>
               </div>
@@ -281,7 +283,8 @@
           {% for event in events%}
             <div class="row event-item">
               <div class="col-lg-6">
-                <img src="{{event.eventImage.url}}" class="img-fluid" alt="">
+                {% comment %} <img src="{{event.eventImage.url}}" class="img-fluid" alt=""> {% endcomment %}
+                <img src="{% static 'restaurant/images/event-private.jpg' %}" class="img-fluid" alt="">
                 
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -424,7 +427,10 @@
           {% for chef in chefs %}
           <div class="col-lg-4 col-md-6">
             <div class="member">
-              <div class="pic" id="chefSize"><img src="{{chef.chefImage.url}}" class="img-fluid" alt=""></div>
+              <div class="pic" id="chefSize">
+                {% comment %} <img src="{{chef.chefImage.url}}" class="img-fluid" alt=""> {% endcomment %}
+                <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="img-fluid" alt="">
+              </div>
               <div class="member-info">
                 <h4>{{chef.chefName}} </h4>
                 <span>{{chef.chefRole}}</span>
