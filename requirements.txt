@@ -21,7 +21,6 @@ Pillow==8.1.2
 pygame==2.0.1
 PyJWT==1.7.1
 pymongo==3.11.3
-PyOpenGL @ file:///C:/Users/fekadu/Documents/PyOpenGL-3.1.5-cp39-cp39-win_amd64.whl
 python-http-client==3.3.2
 pytz==2021.1
 requests==2.25.1
