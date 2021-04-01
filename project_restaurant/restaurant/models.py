@@ -130,10 +130,10 @@ class Event(models.Model):
     def __str__(self):
         return self.event_title
 
+# specialImage = models.ImageField(upload_to = "img/%y")
 class Special(models.Model):
     specialName = models.CharField(max_length=100,verbose_name ="Special Food Name")
     specialDescription =  models.TextField(verbose_name="Special Description")
-    # specialImage = models.ImageField(upload_to = "img/%y")
     def __str__(self):
         return self.specialName
 
