@@ -8,6 +8,7 @@ from django.views import View
 from django.views.generic import FormView
 from django.urls import reverse
 from paypal.standard.forms import PayPalPaymentsForm
+from datetime import date
 from django.views.generic import TemplateView
 
 class PaypalReturnView(TemplateView):
@@ -177,6 +178,13 @@ class Order(View):
                 'footer': Footer.objects.all().first(),
                     
                 }
+                # delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(order) + '\nTotal Price: '+ order.price
+                send_mail(
+                'Delivery Order Request',
+                "hey",
+                your_email,
+                ['el.delicious.d.etiopia@gmail.com'],
+                )
                 return render(request, 'users/order_confirmation.html', context)
         else:
             
@@ -235,9 +243,9 @@ def reservation(request):
         number_of_people = request.POST['people']
         message = request.POST['message']
         
-        reservation = "Name:" + your_name + " \n Phone:" + your_phone + "\n Email:" + your_email + "\n Date:" + date + "\n Time:" + time + " \n Number of People" + number_of_people + "\n Message:" + message
+        reservation = "Name:" + your_name + " \n Phone:" + your_phone + "\n Email:" + your_email + "\n Date:" + date + "\n Time:" + time + " \n Number of People:" + number_of_people + "\n Message:" + message
         send_mail(
-            'Reservation Request',
+            'Table Reservation Request',
             reservation,
             your_email,
             ['el.delicious.d.etiopia@gmail.com'],
