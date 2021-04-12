@@ -10,7 +10,7 @@ class ReservationForm(forms.Form):
     your_email = forms.EmailField(max_length = 50)
     date = forms.DateField()
     time = forms.TimeField()
-    number_of_people = forms.IntegerField(max_length = 50)
+    number_of_people = forms.IntegerField()
     message = forms.CharField(widget = forms.Textarea, max_length = 2000)
 
     class Meta:
