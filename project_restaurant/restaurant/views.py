@@ -178,13 +178,13 @@ class Order(View):
                 'footer': Footer.objects.all().first(),
                     
                 }
-                # delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(order) + '\nTotal Price: '+ order.price
-                send_mail(
-                'Delivery Order Request',
-                "hey",
-                your_email,
-                ['el.delicious.d.etiopia@gmail.com'],
-                )
+                # # delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(order) + '\nTotal Price: '+ order.price
+                # send_mail(
+                # 'Delivery Order Request',
+                # "hey",
+                # your_email,
+                # ['el.delicious.d.etiopia@gmail.com'],
+                # )
                 return render(request, 'users/order_confirmation.html', context)
         else:
             
