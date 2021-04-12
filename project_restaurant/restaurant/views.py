@@ -69,6 +69,7 @@ class Order(View):
             drinks_order_items = {
                 'items': []
             }
+            data = []
             app_items = request.POST.getlist('app_items[]')
             main_items = request.POST.getlist('main_items[]')
             dessert_items = request.POST.getlist('dessert_items[]')
@@ -82,6 +83,7 @@ class Order(View):
                     'price': menu_item.starterPrice,
                     'amount': request.POST[key]
                 }
+                data.append(f'Order: {item_data["amount"]} X {item_data["name"]}')
                 app_order_items['items'].append(item_data)
             for main_item in main_items:
                 menu_item = MainMenu.objects.get(pk__contains=int(main_item))
@@ -92,6 +94,7 @@ class Order(View):
                     'price': menu_item.mainPrice,
                     'amount': request.POST[key]
                 }
+                data.append(f'Order: {item_data["amount"]} X {item_data["name"]}')
                 main_order_items['items'].append(item_data)
             for dessert_item in dessert_items:
                 menu_item = DessertMenu.objects.get(pk__contains=int(dessert_item))
@@ -102,6 +105,7 @@ class Order(View):
                     'price': menu_item.dessertPrice,
                     'amount': request.POST[key]
                 }
+                data.append(f'Order: {item_data["amount"]} X {item_data["name"]}')
                 dessert_order_items['items'].append(item_data)
             for drink_item in drink_items:
                 menu_item = DrinksMenu.objects.get(pk__contains=int(drink_item))
@@ -112,6 +116,7 @@ class Order(View):
                     'price': menu_item.drinksPrice,
                     'amount': request.POST[key]
                 }
+                data.append(f'Order: {item_data["amount"]} X {item_data["name"]}')
                 drinks_order_items['items'].append(item_data)
             
             price = 0
@@ -178,13 +183,13 @@ class Order(View):
                 'footer': Footer.objects.all().first(),
                     
                 }
-                # # delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(order) + '\nTotal Price: '+ order.price
-                # send_mail(
-                # 'Delivery Order Request',
-                # "hey",
-                # your_email,
-                # ['el.delicious.d.etiopia@gmail.com'],
-                # )
+                delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(data) + '\nTotal Price: '+ str(order.price)
+                send_mail(
+                'Delivery Order Request',
+                "hey",
+                email,
+                ['el.delicious.d.etiopia@gmail.com'],
+                )
                 return render(request, 'users/order_confirmation.html', context)
         else:
             
