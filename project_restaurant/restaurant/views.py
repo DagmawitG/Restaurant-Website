@@ -186,7 +186,7 @@ class Order(View):
                 delivery = "Order date: " + str(date.today()) + "\nName: " + order.name + "\nPhone: " + order.phone + "\nMail: " + order.email + "\nLocation: " + order.location + "\nContent: " + str(data) + '\nTotal Price: '+ str(order.price)
                 send_mail(
                 'Delivery Order Request',
-                "hey",
+                delivery,
                 email,
                 ['el.delicious.d.etiopia@gmail.com'],
                 )
