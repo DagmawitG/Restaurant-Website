@@ -5,6 +5,34 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.views import View
+from django.views.generic import FormView
+from django.urls import reverse
+from paypal.standard.forms import PayPalPaymentsForm
+from django.views.generic import TemplateView
+
+class PaypalReturnView(TemplateView):
+    template_name = 'users/paypal_success.html'
+
+class PaypalCancelView(TemplateView):
+    template_name = 'users/paypal_cancel.html'
+
+class PaypalFormView(FormView):
+    template_name = 'users/paypal_form.html'
+    form_class = PayPalPaymentsForm
+
+    def get_initial(self):
+        return {
+            "business": 'your-paypal-business-address@example.com',
+            "amount": 20,
+            "currency_code": "EUR",
+            "item_name": 'Example item',
+            "invoice": 1234,
+            "notify_url": self.request.build_absolute_uri(reverse('paypal-ipn')),
+            "return_url": self.request.build_absolute_uri(reverse('paypal-return')),
+            "cancel_return": self.request.build_absolute_uri(reverse('paypal-cancel')),
+            "lc": 'EN',
+            "no_shipping": '1',
+        }
 
 class Order(View):
     def get(self, request, *args, **kwargs):

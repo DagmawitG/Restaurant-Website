@@ -498,6 +498,18 @@ h1, h2, h3, h4, h5, h6 {
 #hero .carousel-indicators li {
   cursor: pointer;
 }
+#orange{
+  background-color: #ffb03b;
+}
+#orange:active, #orange:hover{
+  background-color: #23272b;
+  background-color: #1d2124;
+  border-color: #171a1d;
+}
+#orange:active{
+  border-color: #1d2124;
+  box-shadow: 0 0 0 0.2rem rgb(82 88 93 / 50%);
+}
 
 #hero .btn-menu, #hero .btn-book {
   font-weight: 600;
