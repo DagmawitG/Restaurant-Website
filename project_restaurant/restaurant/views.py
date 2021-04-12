@@ -212,7 +212,7 @@ def reservation(request):
             'Reservation Request',
             reservation,
             your_email,
-            ['se.dagmawit.getachew@gmail.com'],
+            ['el.delicious.d.etiopia@gmail.com'],
         )
 
         return render(request, 'restaurant/reservation.html', {
