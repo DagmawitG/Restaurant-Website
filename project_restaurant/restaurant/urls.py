@@ -8,8 +8,8 @@ from django.conf import settings
 urlpatterns = [
     path('', views.home, name='restaurant-home'),
     path('reservation', views.reservation, name='reservation'),
-    path('/paypal-return/', views.PaypalReturnView.as_view(), name='paypal-return'),
-    path('/paypal-cancel/', views.PaypalCancelView.as_view(), name='paypal-cancel'),
+    path('paypal-return/', views.PaypalReturnView.as_view(), name='paypal-return'),
+    path('paypal-cancel/', views.PaypalCancelView.as_view(), name='paypal-cancel'),
     path('paypal/', include('paypal.standard.ipn.urls')),
     path('order/', views.Order.as_view(), name='order'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
