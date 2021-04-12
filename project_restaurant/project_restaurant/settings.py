@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'paypal.standard.ipn',
     'djreservation',
     'crispy_forms',
     'restaurant.apps.RestaurantConfig',
