@@ -169,4 +169,4 @@ class OrderModel(models.Model):
     dessertItems = models.ManyToManyField('DessertMenu', related_name='order', blank=True)
     drinkItems = models.ManyToManyField('DrinksMenu', related_name='order', blank=True)
     def __str__(self):
-        return f'Order: {self.created_on.strftime("%b %d %Y %I:%M %p")}' + self.starterItems + self.mainItems + self.dessertItems + self.drinkItems
+        return f'Order: {self.created_on.strftime("%b %d %Y %I:%M %p")}'

@@ -48,3 +48,9 @@
     left: 0;
     bottom: 0;
 }
+.form-check-input{
+    color: black!important;
+}
+.form-check-label{
+    margin-left: 3rem;
+}
