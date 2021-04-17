@@ -1,73 +1,7 @@
+{% extends "restaurant/base.html"}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>El Delicios d'Etiopia</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{% static 'restaurant/images/favicon.png' %}" rel="icon">
-  <link href="{% static 'restaurant/images/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'restaurant/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/vendor/venobox/venobox.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-
-
-  <link href="{% static 'restaurant/css/style.css' %}" rel="stylesheet">
-  <link href="{% static 'restaurant/css/main.css' %}" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-
-  <section id="topbar" class="d-none d-lg-flex align-items-center fixed-top topbar-transparent">
-    <div class="container text-right">
-      <i class="icofont-phone"></i>632 80 21 45
-     
-    </div>
-  </section>
-
-    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-        <div class="container d-flex align-items-center">
-        
-        <div class="logo mr-auto">
-            <h1 class="text-light"><a href="{% url 'restaurant-home'%}"><span>El Delicios d'Etiopia</span></a></h1>
-        
-        </div>
-       
-
-        <nav class="nav-menu d-none d-lg-block">
-            <ul>
-            <li class="active"><a href="{% url 'restaurant-home'%}">Home</a></li>
-            <li><a href="{% url 'reservation'%}">About</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Menu</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Specials</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Events</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Chefs</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Gallery</a></li>
-            <li><a href="{% url 'restaurant-home'%}">Contact</a></li>
-
-            <li class="book-a-table text-center"><a href="{% url 'reservation'%}"><i class="icofont-food-cart"></i> Delivery</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
+{% block about %} 
 <br><br><br><br>
 <div>
 <center>
@@ -87,46 +21,10 @@
 </center>
 
 </div>
+{% endblock %}
 
 
-<footer id="footer">
-    <div class="container">
-    <!-- {% if footer %} -->
-    <h3>El Delicios d'Etiopia</h3>
-    <!-- <p>{{ footer.footerBody }}</p> -->
-    <p>best ethiopian restaurant in town</p>
-    <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="# class="linkedin"><i class="bx bxl-linkedin"></i></a>
-    </div>
-    <div class="copyright">
-        &copy; Copyright {{ footer.year }} <strong><span>{{ footer.footerTitle }}</span></strong>. {{ footer.copyrightText }}
-    </div>
-    <!-- {% endif %} -->
-    
-    </div>
-</footer>
 
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-
-<script src="{% static 'restaurant/vendor/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'restaurant/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-<script src="{% static 'restaurant/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-<script src="{% static 'restaurant/vendor/php-email-form/validate.js' %}"></script>
-<script src="{% static 'restaurant/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
-<script src="{% static 'restaurant/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'restaurant/vendor/venobox/venobox.min.js' %}"></script>
-<script src="{% static 'restaurant/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-
-
-<script src="{% static 'restaurant/js/main.js' %}"></script>
-
-</body>
-
-</html>
 
 
 

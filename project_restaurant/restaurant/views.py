@@ -224,7 +224,8 @@ def home(request):
         'specials': Special.objects.all(),
         'chefs':Chef.objects.all(),
         'specials': Special.objects.all(),
-        'links': Link.objects.all().first()
+        'links': Link.objects.all().first(),
+        'reservations':Reservation.objects.all()
 
     }    
     
@@ -239,28 +240,36 @@ def reservation(request):
         your_phone = request.POST['phone']
         your_email = request.POST['email']
         date = request.POST['date']
-        time = request.POST['time']
+        
         number_of_people = request.POST['people']
         message = request.POST['message']
         
-        reservation = "Name:" + your_name + " \n Phone:" + your_phone + "\n Email:" + your_email + "\n Date:" + date + "\n Time:" + time + " \n Number of People:" + number_of_people + "\n Message:" + message
+        reservation = "Name:" + your_name + " \n Phone:" + your_phone + "\n Email:" + your_email + "\n Date:" + date +  " \n Number of People:" + number_of_people + "\n Message:" + message
         send_mail(
             'Table Reservation Request',
             reservation,
             your_email,
             ['el.delicious.d.etiopia@gmail.com'],
         )
+        
 
         return render(request, 'restaurant/reservation.html', {
         'your_name':your_name,
         'your_phone':your_phone,
         'your_email':your_email,
         'date':date,
-        'time':time,
+       
         'number_of_people':number_of_people,
-        'message':message, })
+        'message':message})
     else:
-        return render(request, 'restaurant/home.html',{})
+        return render(request, 'restaurant/home.html',{
+        'your_name':your_name,
+        'your_phone':your_phone,
+        'your_email':your_email,
+        'date':date,
+       
+        'number_of_people':number_of_people,
+        'message':message})
 
     
 

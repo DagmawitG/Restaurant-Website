@@ -8,6 +8,7 @@ admin.site.register(WhyUs)
 admin.site.register(Footer)
 admin.site.register(Rating)
 admin.site.register(OrderModel)
+admin.site.register(Reservation)
 
 admin.site.register(Link)
 admin.site.register(Location)

@@ -148,7 +148,6 @@ class Reservation(models.Model):
     your_phone = models.CharField(max_length = 50)
     your_email = models.EmailField(max_length = 50)
     date = models.DateField()
-    time = models.TimeField()
     number_of_people = models.IntegerField()
     message = models.CharField(max_length = 2000)
     def __str__(self):
