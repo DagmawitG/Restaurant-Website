@@ -94,7 +94,7 @@
                                 <div class="col-6">
                                     <div class="form-group form-check">
                                         <input type="checkbox" name="main_items[]" class="form-check-input" value="{{ entre.pk }}">
-                                        <label class="form-check-label">{{ entre.mainContent }}</label>
+                                        <label class="form-check-label"x>{{ entre.mainContent }}</label>
                                     </div>
                                     <p class="font-weight-bold pl-5">{{ entre.mainPrice }}</p>
                                 </div>
@@ -117,20 +117,24 @@
                     <h2 class='order-title'>Desserts</h2>
                     <div id='desserts'  class='collapse'> 
                         {% for dessert in desserts %}
-                            <div class="row event-item mt-4">
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="d-flex flex-row">
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" name="dessert_items[]" class="form-check-input" value="{{ dessert.pk }}">
-                                            <label class="form-check-label">{{ dessert.dessertContent }}</label>
-                                        </div>
-                                        <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
-                                        <div class="form-group form-input ml-5 mt-0">
+                            <div class="row event-item ml-4 mr-0">
+                                <div class="col-6">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="dessert_items[]" class="form-check-input" value="{{ dessert.pk }}">
+                                        <label class="form-check-label">{{ dessert.dessertContent }}</label>
+                                    </div>
+                                    <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
+                                </div>
+                                <div class="col-2 text-center">
+                                    <div class="form-group form-input">
                                                 <input type="number" name="dessert-items-{{ dessert.pk }}" class="form-check-input" value="1" min="1" max="5">
                                             </div>
                                     </div>
-                                    <p>{{ dessert.dessertDesc }}</p>
                                 </div>
+                                <div class="col-4 text-center" id="menuSize-lg">
+                                    <img src="{% static "restaurant/images/desserts/" %}{{ dessert.id }}.jpg" alt="" class="img-fluid">
+                                </div>
+                                <p class='ml-5'>{{ dessert.dessertDescc }}</p>
                             </div>
                             <hr />
                         {% endfor %}
