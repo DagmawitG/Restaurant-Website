@@ -144,6 +144,9 @@
         <div class="row menu-container">
           {% for starter in starterMenu %}
           <div class="col-lg-6 menu-item filter-starters">
+            <div class="col-lg-4 text-center" id="menuSize">
+              <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
+            </div>
             <div class="menu-content">
               <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
             </div>

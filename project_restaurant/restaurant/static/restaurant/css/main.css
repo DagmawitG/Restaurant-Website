@@ -9,6 +9,12 @@
     border:transparent ;
     border-radius: 60%;
 }
+#menuSize img{
+    height: 50px;
+    width: 50px;
+    border:transparent ;
+    border-radius: 60%;
+}
 
 .topper{
     margin-top: 4rem!important;
