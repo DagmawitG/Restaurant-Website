@@ -650,7 +650,8 @@ section {
 # About
 --------------------------------------------------------------*/
 #aboutPic{
-  background-image: url("../images/place1.jpg") 
+  background-image: url("../images/about.png");
+  min-height: 10rem;
 }
 .about {
   background: #fffaf3;
@@ -764,6 +765,9 @@ section {
 .about .play-btn:hover::after {
   border-left: 15px solid #ffb03b;
   transform: scale(20);
+}
+.btn-main {
+  background: #ffb03b;
 }
 
 .about .play-btn:hover::before {

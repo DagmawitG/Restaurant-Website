@@ -9,6 +9,18 @@
     border:transparent ;
     border-radius: 60%;
 }
+#menuSize img{
+    height: 50px;
+    width: 50px;
+    border:transparent ;
+    border-radius: 60%;
+}
+#menuSize-lg img{
+    height: 100px;
+    width: 100px;
+    border:transparent ;
+    border-radius: 60%;
+}
 
 .topper{
     margin-top: 4rem!important;
@@ -53,4 +65,21 @@
 }
 .form-check-label{
     margin-left: 3rem;
+}
+.lh-2{
+    line-height: 2;
+}
+
+.m-2{
+    margin: 2rem;
+}
+.order-title{
+    display: inline-block;
+}
+.br-1{
+    border-radius: 1rem;
+    border: none;
+}
+.h-6{
+    height: 7rem;
 }

@@ -42,11 +42,11 @@
 
         <div class="row">
 
-          <div class="col-lg-5 " id='aboutPic'>
+          <div class="col-lg-5 ml-4" id='aboutPic'>
             
           </div>
           {% for about in aboutUs%}
-          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+          <div class="col-lg-5 d-flex flex-column lh-2 justify-content-center align-items-stretch">
 
             <div class="content">
               <h3> <strong>{{about.aboutTitle}}</strong></h3>
@@ -144,11 +144,16 @@
         <div class="row menu-container">
           {% for starter in starterMenu %}
           <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
+            <div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static "restaurant/images/starters/" %}{{ starter.id }}.jpg" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{starter.starterDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{starter.starterDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
@@ -157,33 +162,48 @@
 
           {% for main in mainMenu %}
           <div class="col-lg-6 menu-item filter-main">
-            <div class="menu-content">
-              <a href="#">{{main.mainContent}}</a><span>{{main.mainPrice}}</span>
+          `<div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static "restaurant/images/mains/" %}{{ main.id }}.jpg" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{main.mainDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{main.mainContent}}</a><span>{{main.mainPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{main.mainDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
 
           {% for dessert in dessertMenu %}
           <div class="col-lg-6 menu-item filter-desserts">
-            <div class="menu-content">
-              <a href="#">{{dessert.dessertContent}}</a><span>{{dessert.dessertPrice}}</span>
+            <div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static "restaurant/images/desserts/" %}{{ dessert.id }}.jpg" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{dessert.dessertDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{dessert.dessertContent}}</a><span>{{dessert.dessertPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{dessert.dessertDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
 
           {% for drinks in drinksMenu %}
           <div class="col-lg-6 menu-item filter-drinks">
-            <div class="menu-content">
-              <a href="#">{{drinks.drinksContent}}</a><span>{{drinks.drinksPrice}}</span>
+            <div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static "restaurant/images/drinks/" %}{{ drinks.id }}.jpg" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{drinks.drinksDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{drinks.drinksContent}}</a><span>{{drinks.drinksPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{drinks.drinksDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
@@ -284,7 +304,7 @@
             <div class="row event-item">
               <div class="col-lg-6">
                 {% comment %} <img src="{{event.eventImage.url}}" class="img-fluid" alt=""> {% endcomment %}
-                <img src="{% static 'restaurant/images/event-private.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'restaurant/images/customer1.jpg' %}" class="img-fluid" alt="">
                 
               </div>
               <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -405,8 +425,8 @@
 
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{% static 'restaurant/images/customer1.jpg' %}" class="venobox" data-gall="gallery-item">
-                <img src="{% static 'restaurant/images/customer1.jpg' %}" alt="" class="img-fluid">
+              <a href="{% static 'restaurant/images/customer5.jpg' %}" class="venobox" data-gall="gallery-item">
+                <img src="{% static 'restaurant/images/customer5.jpg' %}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
@@ -446,8 +466,10 @@
         </div>
 
         <div class="row">
+          <div class="col-lg-4">
+          </div>
           {% for chef in chefs %}
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4">
             <div class="member">
               <div class="pic" id="chefSize">
                 {% comment %} <img src="{{chef.chefImage.url}}" class="img-fluid" alt=""> {% endcomment %}
@@ -532,8 +554,9 @@
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-clock-time icofont-rotate-90"></i>
               <h4>Open Hours:</h4>
-              <p>Weekdays:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
-                 Weekends:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}</p>
+              <p>lun &amp; mar:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
+                mié: Cerrado<br><br>
+                 jue &amp; vie &amp; sáb &amp; dom:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}, {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}</p>
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
@@ -550,7 +573,8 @@
               <i class="icofont-phone"></i>
               <h4>Call:</h4>
               {% for callData in call %}
-                <p>{{callData.phone_number}}</p>
+                <br>
+                <a href="tel:{{callData.phone_number}}">{{callData.phone_number}}</a>
                 <br>
               {% endfor %}
               
