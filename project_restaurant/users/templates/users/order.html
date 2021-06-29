@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="pt-2">
-                <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#desserts" aria-expanded="false" aria-controls="desserts"><i class="icofont-simple-down"></i></button>
+                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#desserts" aria-expanded="false" aria-controls="desserts"><i class="icofont-simple-down"></i></button>
                     <h2 class='order-title'>Desserts</h2>
                     <div id='desserts'  class='collapse'> 
                         {% for dessert in desserts %}
@@ -129,25 +129,29 @@
                     </div>
                 </div>
                 <div class="pt-2">
-                <h2>Drinks</h2>
-                    {% for drink in drinks %}
-                    <div class="row event-item mt-4">
-                        <div class="col-md-8 col-sm-12">
-                            <div class="d-flex flex-row">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="drink_items[]" class="form-check-input" value="{{ drink.pk }}">
-                                    <label class="form-check-label">{{ drink.drinksContent }}</label>
-                                </div>
-                                <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
-                                <div class="form-group form-input ml-5 mt-0">
-                                        <input type="number" name="drink-items-{{ drink.pk }}" class="form-check-input" value="1" min="1" max="5">
+                <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#drinks" aria-expanded="false" aria-controls="drinks"><i class="icofont-simple-down"></i></button>
+                    <h2 class='order-title'>Drinks</h2>
+                    <div id='drinks'  class='collapse'> 
+                        {% for drink in drinks %}
+                            <div class="row event-item mt-4">
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="d-flex flex-row">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" name="drink_items[]" class="form-check-input" value="{{ drink.pk }}">
+                                            <label class="form-check-label">{{ drink.drinksContent }}</label>
+                                        </div>
+                                        <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
+                                        <div class="form-group form-input ml-5 mt-0">
+                                                <input type="number" name="drink-items-{{ drink.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                            </div>
                                     </div>
+                                    <p>{{ drink.drinksDesc }}</p>
+                                </div>
                             </div>
-                            <p>{{ drink.drinksDesc }}</p>
-                        </div>
+                            <hr />
+                        {% endfor %}
                     </div>
-                    <hr />
-                    {% endfor %}
+                    
                 </div>
                 <button id='orange' class="btn btn-dark mt-5">Place Order!</button>
             </form>
