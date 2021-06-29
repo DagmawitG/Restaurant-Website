@@ -766,6 +766,9 @@ section {
   border-left: 15px solid #ffb03b;
   transform: scale(20);
 }
+.btn-main {
+  background: #ffb03b;
+}
 
 .about .play-btn:hover::before {
   content: '';
