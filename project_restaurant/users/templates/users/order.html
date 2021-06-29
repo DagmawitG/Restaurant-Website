@@ -57,8 +57,8 @@
                     <hr class='mt-5' />
                 </div>
                 <div class="pt-2">
-                    <button class="btn btn-main" type="button" data-toggle="collapse" data-target="#appetizers" aria-expanded="false" aria-controls="appetizers"><i class="icofont-envelope"></i></button>
-                    <h2>Appetizers</h2>
+                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#appetizers" aria-expanded="false" aria-controls="appetizers"><i class="icofont-arrow-down"></i></button>
+                    <h2 class='order-title'>Appetizers</h2>
                         <div id='appetizers'>
                             {% for app in appetizers %}
                                 <div class="row event-item">
@@ -78,28 +78,31 @@
                                 </div>
                                 <hr />
                             {% endfor %}
-                        <div>
+                        </div>
                 </div>
                 <div class="pt-2">
-                <h2>Main Dish</h2>
-                    {% for entre in entres %}
-                    <div class="row event-item mt-4">
-                        <div class="col-md-8 col-sm-12">
-                            <div class="d-flex flex-row">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="main_items[]" class="form-check-input" value="{{ entre.pk }}">
-                                    <label class="form-check-label">{{ entre.mainContent }}</label>
-                                </div>
-                                <p class="font-weight-bold pl-5">{{ entre.mainPrice }}</p>
-                                <div class="form-group form-input ml-5 mt-0">
-                                        <input type="number" name="entre-items-{{ entre.pk }}" class="form-check-input" value="1" min="1" max="5">
+                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#mains" aria-expanded="false" aria-controls="mains"><i class="icofont-arrow-down"></i></button>
+                    <h2 class='order-title'>Main Dish</h2>
+                    <div id='mains'>
+                        {% for entre in entres %}
+                            <div class="row event-item mt-4">
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="d-flex flex-row">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" name="main_items[]" class="form-check-input" value="{{ entre.pk }}">
+                                            <label class="form-check-label">{{ entre.mainContent }}</label>
+                                        </div>
+                                        <p class="font-weight-bold pl-5">{{ entre.mainPrice }}</p>
+                                        <div class="form-group form-input ml-5 mt-0">
+                                                <input type="number" name="entre-items-{{ entre.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                            </div>
                                     </div>
+                                    <p>{{ entre.mainDesc }}</p>
+                                </div>
                             </div>
-                            <p>{{ entre.mainDesc }}</p>
-                        </div>
+                            <hr />
+                        {% endfor %}
                     </div>
-                    <hr />
-                    {% endfor %}
                 </div>
                 <div class="pt-2">
                 <h2>Desserts</h2>

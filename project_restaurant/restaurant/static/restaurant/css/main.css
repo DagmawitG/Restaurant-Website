@@ -63,3 +63,10 @@
 .lh-2{
     line-height: 2;
 }
+
+.m-2{
+    margin: 2rem;
+}
+.order-title{
+    display: inline-block;
+}
