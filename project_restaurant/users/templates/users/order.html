@@ -62,7 +62,7 @@
                     <h2 class='order-title'>Appetizers</h2>
                         <div id='appetizers' class='collapse'>
                             {% for app in appetizers %}
-                                <div class="row event-item">
+                                <div class="row event-item ml-4 mr-0">
                                     <div class="col-8">
                                         <div class="form-group form-check">
                                             <input type="checkbox" name="app_items[]" class="form-check-input" value="{{ app.pk }}">
@@ -78,7 +78,7 @@
                                     <div class="col-2 text-center" id="menuSize">
                                         <img src="{% static "restaurant/images/starters/" %}{{ app.id }}.jpg" alt="" class="img-fluid">
                                     </div>
-                                <p>{{ app.starterDesc }}</p>
+                                <p class='ml-5'>{{ app.starterDesc }}</p>
                                 </div>
                                 <hr />
                             {% endfor %}
