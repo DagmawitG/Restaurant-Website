@@ -57,9 +57,9 @@
                     <hr class='mt-5' />
                 </div>
                 <div class="pt-2">
-                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#appetizers" aria-expanded="false" aria-controls="appetizers"><i class="icofont-arrow-down"></i></button>
+                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#appetizers" aria-expanded="false" aria-controls="appetizers"><i class="icofont-simple-down"></i></button>
                     <h2 class='order-title'>Appetizers</h2>
-                        <div id='appetizers'>
+                        <div id='appetizers' class='collapse'>
                             {% for app in appetizers %}
                                 <div class="row event-item">
                                     <div class="col-md-8 col-sm-12">
@@ -81,9 +81,9 @@
                         </div>
                 </div>
                 <div class="pt-2">
-                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#mains" aria-expanded="false" aria-controls="mains"><i class="icofont-arrow-down"></i></button>
+                    <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#mains" aria-expanded="false" aria-controls="mains"><i class="icofont-simple-down"></i></button>
                     <h2 class='order-title'>Main Dish</h2>
-                    <div id='mains'>
+                    <div id='mains'  class='collapse'>
                         {% for entre in entres %}
                             <div class="row event-item mt-4">
                                 <div class="col-md-8 col-sm-12">
@@ -105,25 +105,28 @@
                     </div>
                 </div>
                 <div class="pt-2">
-                <h2>Desserts</h2>
-                    {% for dessert in desserts %}
-                    <div class="row event-item mt-4">
-                        <div class="col-md-8 col-sm-12">
-                            <div class="d-flex flex-row">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" name="dessert_items[]" class="form-check-input" value="{{ dessert.pk }}">
-                                    <label class="form-check-label">{{ dessert.dessertContent }}</label>
-                                </div>
-                                <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
-                                <div class="form-group form-input ml-5 mt-0">
-                                        <input type="number" name="dessert-items-{{ dessert.pk }}" class="form-check-input" value="1" min="1" max="5">
+                <button class="btn btn-main m-2" type="button" data-toggle="collapse" data-target="#desserts" aria-expanded="false" aria-controls="desserts"><i class="icofont-simple-down"></i></button>
+                    <h2 class='order-title'>Desserts</h2>
+                    <div id='desserts'  class='collapse'> 
+                        {% for dessert in desserts %}
+                            <div class="row event-item mt-4">
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="d-flex flex-row">
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" name="dessert_items[]" class="form-check-input" value="{{ dessert.pk }}">
+                                            <label class="form-check-label">{{ dessert.dessertContent }}</label>
+                                        </div>
+                                        <p class="font-weight-bold pl-5">{{ dessert.dessertPrice }}</p>
+                                        <div class="form-group form-input ml-5 mt-0">
+                                                <input type="number" name="dessert-items-{{ dessert.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                            </div>
                                     </div>
+                                    <p>{{ dessert.dessertDesc }}</p>
+                                </div>
                             </div>
-                            <p>{{ dessert.dessertDesc }}</p>
-                        </div>
+                            <hr />
+                        {% endfor %}
                     </div>
-                    <hr />
-                    {% endfor %}
                 </div>
                 <div class="pt-2">
                 <h2>Drinks</h2>
