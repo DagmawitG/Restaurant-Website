@@ -63,24 +63,24 @@
                         <div id='appetizers' class='collapse'>
                             {% for app in appetizers %}
                                 <div class="row event-item">
-                                    <div class="col-12">
-                                        <div class="d-flex flex-row">
-                                            <div class="col-8">
-                                                <div class="form-group form-check">
-                                                    <input type="checkbox" name="app_items[]" class="form-check-input" value="{{ app.pk }}">
-                                                    <label class="form-check-label">{{ app.starterContent }}</label>
-                                                </div>
-                                                <p class="font-weight-bold pl-5">{{ app.starterPrice }}</p>
-                                                <div class="form-group form-input ml-5 mt-0">
-                                                    <input type="number" name="app-items-{{ app.pk }}" class="form-check-input" value="1" min="1" max="5">
-                                                </div>
+                                    <div class="d-flex flex-row">
+                                        <div class="col-8">
+                                            <div class="form-group form-check">
+                                                <input type="checkbox" name="app_items[]" class="form-check-input" value="{{ app.pk }}">
+                                                <label class="form-check-label">{{ app.starterContent }}</label>
                                             </div>
-                                            <div class="col-2 text-center" id="menuSize">
-                                                <img src="{% static "restaurant/images/starters/" %}{{ app.id }}.jpg" alt="" class="img-fluid">
-                                            </div>
+                                            <p class="font-weight-bold pl-5">{{ app.starterPrice }}</p>
+                                            
                                         </div>
-                                        <p>{{ app.starterDesc }}</p>
+                                        <div class="col-2 text-center" id="menuSize">
+                                            <div class="form-group form-input">
+                                                <input type="number" name="app-items-{{ app.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                            </div>                                            </div>
+                                        <div class="col-2 text-center" id="menuSize">
+                                            <img src="{% static "restaurant/images/starters/" %}{{ app.id }}.jpg" alt="" class="img-fluid">
+                                        </div>
                                     </div>
+                                    <p>{{ app.starterDesc }}</p>
                                 </div>
                                 <hr />
                             {% endfor %}
