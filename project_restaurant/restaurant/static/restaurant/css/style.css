@@ -650,7 +650,10 @@ section {
 # About
 --------------------------------------------------------------*/
 #aboutPic{
-  background-image: url("../images/place1.jpg") 
+  background-image: url("../images/about.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 .about {
   background: #fffaf3;
