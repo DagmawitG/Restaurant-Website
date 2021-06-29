@@ -571,7 +571,7 @@
               <i class="icofont-phone"></i>
               <h4>Call:</h4>
               {% for callData in call %}
-                <a href={{callData.phone_number}}>{{callData.phone_number}}</a>
+                <a href="tel:{{callData.phone_number}}">{{callData.phone_number}}</a>
                 <br>
               {% endfor %}
               
