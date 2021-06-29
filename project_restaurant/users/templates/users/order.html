@@ -72,6 +72,9 @@
                                             <div class="form-group form-input ml-5 mt-0">
                                                 <input type="number" name="app-items-{{ app.pk }}" class="form-check-input" value="1" min="1" max="5">
                                             </div>
+                                            <div class="col-md-2 text-center" id="menuSize">
+                                                <img src="{% static "restaurant/images/starters/" %}{{ app.id }}.jpg" alt="" class="img-fluid">
+                                            </div>
                                         </div>
                                         <p>{{ app.starterDesc }}</p>
                                     </div>
