@@ -144,14 +144,16 @@
         <div class="row menu-container">
           {% for starter in starterMenu %}
           <div class="col-lg-6 menu-item filter-starters">
-            <div class="col-lg-4 text-center" id="menuSize">
+            <div class="col-md-2 text-center" id="menuSize">
               <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
             </div>
-            <div class="menu-content">
-              <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
-            </div>
-            <div class="menu-ingredients">
-              {{starter.starterDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{starter.starterContent}}</a><span>{{starter.starterPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{starter.starterDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
