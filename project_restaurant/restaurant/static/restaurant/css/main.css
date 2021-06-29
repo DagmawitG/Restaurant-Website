@@ -15,6 +15,12 @@
     border:transparent ;
     border-radius: 60%;
 }
+#menuSize-lg img{
+    height: 100px;
+    width: 100px;
+    border:transparent ;
+    border-radius: 60%;
+}
 
 .topper{
     margin-top: 4rem!important;
