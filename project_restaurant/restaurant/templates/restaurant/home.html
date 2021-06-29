@@ -145,7 +145,7 @@
           {% for starter in starterMenu %}
           <div class="col-lg-6 menu-item filter-starters">
             <div class="col-md-2 text-center" id="menuSize">
-              <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
+              <img src="{% static 'restaurant/images/starters/{{starter.starterOption}}.jpg' %}" alt="" class="img-fluid">
             </div>
             <div class="col-md-8">
               <div class="menu-content">
@@ -162,33 +162,48 @@
 
           {% for main in mainMenu %}
           <div class="col-lg-6 menu-item filter-main">
-            <div class="menu-content">
-              <a href="#">{{main.mainContent}}</a><span>{{main.mainPrice}}</span>
+          `<div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{main.mainDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{main.mainContent}}</a><span>{{main.mainPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{main.mainDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
 
           {% for dessert in dessertMenu %}
           <div class="col-lg-6 menu-item filter-desserts">
-            <div class="menu-content">
-              <a href="#">{{dessert.dessertContent}}</a><span>{{dessert.dessertPrice}}</span>
+            <div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{dessert.dessertDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{dessert.dessertContent}}</a><span>{{dessert.dessertPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{dessert.dessertDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
 
           {% for drinks in drinksMenu %}
           <div class="col-lg-6 menu-item filter-drinks">
-            <div class="menu-content">
-              <a href="#">{{drinks.drinksContent}}</a><span>{{drinks.drinksPrice}}</span>
+            <div class="col-md-2 text-center" id="menuSize">
+              <img src="{% static 'restaurant/images/kitfo.jpg' %}" alt="" class="img-fluid">
             </div>
-            <div class="menu-ingredients">
-              {{drinks.drinksDesc}}
+            <div class="col-md-8">
+              <div class="menu-content">
+                <a href="#">{{drinks.drinksContent}}</a><span>{{drinks.drinksPrice}}</span>
+              </div>
+              <div class="menu-ingredients">
+                {{drinks.drinksDesc}}
+              </div>
             </div>
           </div>
           {% endfor %}
