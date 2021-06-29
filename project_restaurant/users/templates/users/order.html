@@ -144,20 +144,23 @@
                     <h2 class='order-title'>Drinks</h2>
                     <div id='drinks'  class='collapse'> 
                         {% for drink in drinks %}
-                            <div class="row event-item mt-4">
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="d-flex flex-row">
-                                        <div class="form-group form-check">
-                                            <input type="checkbox" name="drink_items[]" class="form-check-input" value="{{ drink.pk }}">
-                                            <label class="form-check-label">{{ drink.drinksContent }}</label>
-                                        </div>
-                                        <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
-                                        <div class="form-group form-input ml-5 mt-0">
-                                                <input type="number" name="drink-items-{{ drink.pk }}" class="form-check-input" value="1" min="1" max="5">
-                                            </div>
+                            <div class="row event-item ml-4 mr-0">
+                                <div class="col-6">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" name="drink_items[]" class="form-check-input" value="{{ drink.pk }}">
+                                        <label class="form-check-label">{{ drink.drinksContent }}</label>
                                     </div>
-                                    <p>{{ drink.drinksDesc }}</p>
+                                    <p class="font-weight-bold pl-5">{{ drink.drinksPrice }}</p>
                                 </div>
+                                <div class="col-2 text-center">
+                                    <div class="form-group form-input">
+                                        <input type="number" name="drink-items-{{ drink.pk }}" class="form-check-input" value="1" min="1" max="5">
+                                    </div>
+                                </div>
+                                <div class="col-4 text-center" id="menuSize-lg">
+                                    <img src="{% static "restaurant/images/drinks/" %}{{ drink.id }}.jpg" alt="" class="img-fluid">
+                                </div>
+                                <p class='ml-5'>{{ drink.drinksDesc }}</p>
                             </div>
                             <hr />
                         {% endfor %}
