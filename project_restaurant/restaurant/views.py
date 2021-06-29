@@ -125,19 +125,19 @@ class Order(View):
             dessert_item_ids = []
             drinks_item_ids = []
             for item in app_order_items['items']:
-                price += (float((item['price'])[1:]) * int(item['amount']))
+                price += (float((item['price'])[:-1]) * int(item['amount']))
                 for i in range(int(item['amount'])):
                     app_item_ids.append(item['id'])
             for item in main_order_items['items']:
-                price += (float((item['price'])[1:]) * int(item['amount']))
+                price += (float((item['price'])[:-1]) * int(item['amount']))
                 for i in range(int(item['amount'])):
                     app_item_ids.append(item['id'])
             for item in dessert_order_items['items']:
-                price += (float((item['price'])[1:]) * int(item['amount']))
+                price += (float((item['price'])[:-1]) * int(item['amount']))
                 for i in range(int(item['amount'])):
                     app_item_ids.append(item['id'])
             for item in drinks_order_items['items']:
-                price += (float((item['price'])[1:]) * int(item['amount']))
+                price += (float((item['price'])[:-1]) * int(item['amount']))
                 for i in range(int(item['amount'])):
                     app_item_ids.append(item['id'])
             
