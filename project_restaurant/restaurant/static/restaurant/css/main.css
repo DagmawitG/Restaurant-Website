@@ -70,3 +70,7 @@
 .order-title{
     display: inline-block;
 }
+.br-1{
+    border-radius: 1rem;
+    border: none;
+}
