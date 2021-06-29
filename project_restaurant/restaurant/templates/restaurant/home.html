@@ -553,7 +553,7 @@
               <i class="icofont-clock-time icofont-rotate-90"></i>
               <h4>Open Hours:</h4>
               <p>lun &amp; mar:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
-                mié:	<br> Cerrado<br><br>
+                mié: Cerrado<br><br>
                  jue &amp; vie &amp; sáb &amp; dom:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}, {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}</p>
             </div>
 
@@ -571,7 +571,7 @@
               <i class="icofont-phone"></i>
               <h4>Call:</h4>
               {% for callData in call %}
-                <p>{{callData.phone_number}}</p>
+                <a href={{callData.phone_number}}>{{callData.phone_number}}</a>
                 <br>
               {% endfor %}
               
