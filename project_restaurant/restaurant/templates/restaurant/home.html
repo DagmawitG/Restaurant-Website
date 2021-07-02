@@ -18,8 +18,8 @@
                 <h2 class="animate__animated animate__fadeInDown"><span>{{hero.restaurantName}}</span> Restaurant</h2>
                 <p class="animate__animated animate__fadeInUp">{{hero.restaurantMotto}}</p>
                 <div>
-                    <a href="{% url 'order'%}" class="btn-book animate__animated animate__fadeInUp scrollto">Order Delivery</a>
-                    <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                    <a href="{% url 'order'%}" class="btn-book animate__animated animate__fadeInUp scrollto">Entrega de pedidos</a>
+                    <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Reservar una mesa</a>
                 </div>
               </div>
             </div>
@@ -126,17 +126,17 @@
       <div class="container">
 
         <div class="section-title">
-          <h2><span>Menu</span></h2>
+          <h2><span>Menú</span></h2>
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
-              <li data-filter="*" class="filter-active">Show All</li>
-              <li data-filter=".filter-starters">Starters</li>
-              <li data-filter=".filter-main">Main</li>
-              <li data-filter=".filter-desserts">Dessert</li>
-              <li data-filter=".filter-drinks">Drinks</li>
+              <li data-filter="*" class="filter-active">Mostrar todo</li>
+              <li data-filter=".filter-starters">Entrantes</li>
+              <li data-filter=".filter-main">Platos principales</li>
+              <li data-filter=".filter-desserts">Postres</li>
+              <li data-filter=".filter-drinks">Bebidas</li>
             </ul>
           </div>
         </div>
@@ -222,7 +222,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Check our <span>Specials</span></h2>
+          <h2>Consulte nuestras ofertas  <span>especiales</span></h2>
          
         </div>
         
@@ -295,7 +295,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Organize Your <span>Events</span> in our Restaurant</h2>
+          <h2>Organice sus <span>eventos</span> en nuestro restaurantet</h2>
         </div>
 
         <div class="owl-carousel events-carousel">
@@ -338,7 +338,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Book a <span>Table</span></h2>
+          <h2><span>Reservar </span> una mesa</h2>
          
         </div>
 
@@ -346,20 +346,20 @@
           {% csrf_token %}
           <div class="form-row">
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter your full name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Tu Nombrex" data-rule="minlen:4" data-msg="Please enter your full name" required>
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo electrónico" data-rule="email" data-msg="Please enter a valid email" required>
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter your phone number" required>
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Tu número de teléfono" data-rule="minlen:4" data-msg="Please enter your phone number" required>
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group">
               
-             <input type="datetime-local" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter the date" required>
+             <input type="datetime-local" name="date" class="form-control" id="date" placeholder="Fecha" data-rule="minlen:4" data-msg="Please enter the date" required>
              
 
          
@@ -369,16 +369,16 @@
            
            
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="number" min="1" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter the number of people" required>
+              <input type="number" min="1" class="form-control" name="people" id="people" placeholder="Número de personas" data-rule="minlen:1" data-msg="Please enter the number of people" required>
               <div class="validate"></div>
             </div>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje"></textarea>
             <div class="validate"></div>
           </div>
         
-          <div class="text-center"><button type="submit"  id = "submit" data-toggle="modal" data-target="#myModal">Send Message</button></div>
+          <div class="text-center"><button type="submit"  id = "submit" data-toggle="modal" data-target="#myModal">Reservar una mesa</button></div>
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
             
@@ -389,7 +389,7 @@
                   <h2 class="modal-title">Reservation Sent Successfully!</h2>
                 </div>
                 <div class="modal-body">
-                  <p>We will confirm your reservation shortly via email or a phone call!</p>
+                  <p>Confirmaremos su reserva en breve por correo electrónico o una llamada telefónica!</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" onclick="javascript:window.location.reload()" data-dismiss="modal">Close</button>
@@ -409,7 +409,7 @@
       <div class="container-fluid">
 
         <div class="section-title">
-          <h2>Some photos from <span>Our Restaurant</span></h2>
+          <h2>Algunas fotos de <span>Nuestro Restaurante</span></h2>
           
         </div>
 
@@ -461,7 +461,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Our Proffesional <span>Chefs</span></h2>
+          <h2>Nuestros <span>Chefs</span> Profesionales </h2>
           
         </div>
 
@@ -527,7 +527,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2><span>Contact</span> Us</h2>
+          <h2><span>Contacta</span>  con nosotros</h2>
           
         </div>
       </div>
@@ -543,7 +543,7 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 info">
               <i class="icofont-google-map"></i>
-              <h4>Location:</h4>
+              <h4>Localización:</h4>
               {% for locationData in location %}
                 <p>{{locationData.avenue}}<br> {{locationData.city}},
                 {{locationData.country}}</p>
@@ -553,15 +553,15 @@
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-clock-time icofont-rotate-90"></i>
-              <h4>Open Hours:</h4>
-              <p>lun &amp; mar:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
-                mié: Cerrado<br><br>
-                 jue &amp; vie &amp; sáb &amp; dom:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}, {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}</p>
+              <h4>Horarios de apertura:</h4>
+              <p>lunes &amp; martes:	<br> {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}<br><br>
+                miércoles: Cerrado<br><br>
+                 jueves &amp; viernes &amp; sábado &amp; domingo:	<br>{{openHours.weekends_startTime}} – {{openHours.weekends_endTime}}, {{openHours.weekdays_startTime}} – {{openHours.weekdays_endTime}}</p>
             </div>
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-envelope"></i>
-              <h4>Email:</h4>
+              <h4>Correo electrónico:</h4>
               {% for emailData in email %}
                 <p>{{emailData.email_address}}</p>
                 <br>
@@ -571,7 +571,7 @@
 
             <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
               <i class="icofont-phone"></i>
-              <h4>Call:</h4>
+              <h4>Teléfono:</h4>
               {% for callData in call %}
                 <br>
                 <a href="tel:{{callData.phone_number}}">{{callData.phone_number}}</a>
