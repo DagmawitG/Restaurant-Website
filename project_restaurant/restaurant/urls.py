@@ -12,4 +12,5 @@ urlpatterns = [
     path('paypal-cancel/', views.PaypalCancelView.as_view(), name='paypal-cancel'),
     path('paypal/', include('paypal.standard.ipn.urls')),
     path('order/', views.Order.as_view(), name='order'),
+    path('google9f1fe2c472c358f0.html/', views.verify, name='verify'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

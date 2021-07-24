@@ -237,6 +237,8 @@ def home(request):
     
     return render(request, 'restaurant/home.html',context1)
 
+def verify(request):
+    return render(request, 'restaurant/google9f1fe2c472c358f0.html')
 
 def reservation(request):
     
