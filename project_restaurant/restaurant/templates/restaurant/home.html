@@ -230,7 +230,7 @@
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
             {% for special in specials %}
-              {% if special.id == 1 %}
+              {% if special.id == 2 %}
               <li class="nav-item">
                 <a class="nav-link active show" data-toggle="tab" href="#tab-{{special.id}}">{{special.specialName}}</a>
               </li>
@@ -473,7 +473,7 @@
             <div class="member">
               <div class="pic" id="chefSize">
                 {% comment %} <img src="{{chef.chefImage.url}}" class="img-fluid" alt=""> {% endcomment %}
-                <img src="{% static 'restaurant/images/chef 2.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'restaurant/images/el.jpg' %}" class="img-fluid" alt="">
               </div>
               <div class="member-info">
                 <h4>{{chef.chefName}} </h4>
