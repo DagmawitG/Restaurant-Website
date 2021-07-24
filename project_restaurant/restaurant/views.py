@@ -11,6 +11,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 from datetime import date
 from django.views.generic import TemplateView
 
+
 class PaypalReturnView(TemplateView):
     template_name = 'users/paypal_success.html'
 
