@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from django.contrib.sitemaps.views import sitemap
-from .sitemap import StaticSitemap
-
+from . import sitemap
+StaticSitemap = sitemap.StaticSitemap
 sitemaps = {
     'static': StaticSitemap,
 }
