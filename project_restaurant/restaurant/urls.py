@@ -5,6 +5,11 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
+from . import  sitemap
+
+sitemaps = {
+ 'pages': sitemap.StaticSitemap,
+}
 
 urlpatterns = [
     path('', views.home, name='restaurant-home'),
