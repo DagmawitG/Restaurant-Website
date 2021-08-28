@@ -4,6 +4,7 @@ from djreservation import urls as djreservation_urls
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
     path('', views.home, name='restaurant-home'),
@@ -13,7 +14,8 @@ urlpatterns = [
     path('paypal/', include('paypal.standard.ipn.urls')),
     path('order/', views.Order.as_view(), name='order'),
     path('google9f1fe2c472c358f0.html/', views.verify, name='verify'),
-    path('sitemap.xml/', views.site, name='sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+     name='django.contrib.sitemaps.views.sitemap')
     path('^$', views.home, name='restaurant-home'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
