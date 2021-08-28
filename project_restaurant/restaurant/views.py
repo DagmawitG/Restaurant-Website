@@ -240,6 +240,9 @@ def home(request):
 def verify(request):
     return render(request, 'restaurant/google9f1fe2c472c358f0.html')
 
+def site(request):
+    return HttpResponse(open('restaurant/sitemap.xml').read(), content_type='text/xml')
+
 def reservation(request):
     
    
