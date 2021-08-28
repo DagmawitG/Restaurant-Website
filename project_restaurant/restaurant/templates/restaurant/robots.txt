@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow:
 
-Sitemap: http://el-delicios-restaurant-app.herokuapp.com/sitemap.xml
+Sitemap: https://el-delicios-restaurant-app.herokuapp.com/sitemap.xml
